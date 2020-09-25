@@ -11,10 +11,11 @@
         <scene sceneID="JhH-Ya-yCx">
             <objects>
                 <tabBarController id="PmF-6R-daA" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iwh-Vp-Kqi">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="iwh-Vp-Kqi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="4yb-wL-bbr" kind="relationship" relationship="viewControllers" id="lzw-kl-pqo"/>
@@ -47,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="-1229" y="1030"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="AfK-HQ-yP7">
             <objects>
-                <viewController id="k47-BY-q8t" sceneMemberID="viewController">
+                <viewController id="k47-BY-q8t" customClass="HomeViewController" customModule="Tibb_Instagram" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N8S-Ng-z2n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +68,7 @@
         <scene sceneID="TTx-Zd-Mwm">
             <objects>
                 <navigationController id="dJc-SS-Zzo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="folder.circle" catalog="system" id="c8F-9l-UyJ"/>
+                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="c8F-9l-UyJ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vAg-LQ-NKn">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -131,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="1829" y="1030"/>
         </scene>
-        <!--View Controller-->
+        <!--Explore View Controller-->
         <scene sceneID="mOs-Ft-sy7">
             <objects>
-                <viewController id="i7o-gB-gJT" sceneMemberID="viewController">
+                <viewController id="i7o-gB-gJT" customClass="ExploreViewController" customModule="Tibb_Instagram" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d8u-tl-ZgL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,10 +148,10 @@
             </objects>
             <point key="canvasLocation" x="-468" y="1728"/>
         </scene>
-        <!--View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="AZ1-Bn-jSb">
             <objects>
-                <viewController id="6GG-lR-kW1" sceneMemberID="viewController">
+                <viewController id="6GG-lR-kW1" customClass="CameraViewController" customModule="Tibb_Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OvK-AM-Zc5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,10 +164,10 @@
             </objects>
             <point key="canvasLocation" x="316" y="1728"/>
         </scene>
-        <!--View Controller-->
+        <!--Notification View Controller-->
         <scene sceneID="3bi-tV-BQa">
             <objects>
-                <viewController id="gk5-DC-Loq" sceneMemberID="viewController">
+                <viewController id="gk5-DC-Loq" customClass="NotificationViewController" customModule="Tibb_Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X5P-8A-fUp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,10 +180,10 @@
             </objects>
             <point key="canvasLocation" x="1087" y="1728"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="PA6-wv-Uvd">
             <objects>
-                <viewController id="2TZ-Y4-4YV" sceneMemberID="viewController">
+                <viewController id="2TZ-Y4-4YV" customClass="ProfileViewController" customModule="Tibb_Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rJz-Fm-JqN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,8 +198,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="folder.circle" catalog="system" width="128" height="121"/>
         <image name="house" catalog="system" width="128" height="110"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="suit.heart" catalog="system" width="128" height="109"/>

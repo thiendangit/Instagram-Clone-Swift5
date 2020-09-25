@@ -4,7 +4,17 @@
 target 'InstagramClone-Swift5' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  
   # Pods for InstagramClone-Swift5
-
+  
+  #Appirater
+  pod "Appirater"
+  #Firebase
+  pod 'Firebase/Auth'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Storage'
+  
 end
