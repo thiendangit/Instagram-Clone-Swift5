@@ -119,7 +119,7 @@
         <scene sceneID="Uyu-3T-w6g">
             <objects>
                 <navigationController id="zpn-Fb-QsV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="hNE-Ug-bbi"/>
+                    <tabBarItem key="tabBarItem" title="" image="person.crop.circle" catalog="system" id="hNE-Ug-bbi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sTF-23-6oC">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -200,7 +200,7 @@
     <resources>
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="suit.heart" catalog="system" width="128" height="109"/>
     </resources>

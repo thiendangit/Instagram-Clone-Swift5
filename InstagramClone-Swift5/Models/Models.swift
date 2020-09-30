@@ -8,8 +8,9 @@
 
 import Foundation
 
-public enum UserPostType{
-    case photo,video
+public enum UserPostType : String {
+    case photo = "Photo"
+    case video = "Video"
 }
 public enum Gender {
     case Male , female , other
@@ -23,6 +24,7 @@ public struct User {
     let birthday : Date
     let gender : Gender
     let joinDate : Date
+    let thumbnailImage : URL
 }
 
 struct UserCount {
@@ -34,11 +36,13 @@ struct UserCount {
 public struct UserModal {
     let postType : UserPostType
     let thumbnailImage : URL
+    let postURL : URL
     let caption : String?
     let likeCout : [PostLike]
     let comments : [PostComment]
     let createDate : Date
     let targetUser : [User]
+    let owner : User
 }
 
 struct PostLike {
@@ -52,10 +56,11 @@ struct CommentLike {
 }
 
 struct PostComment {
+    let identifier : String
     let username : String
     let text : String
     let createDate : Date
-    let likes = [CommentLike]()
+    let likes : [CommentLike]
 }
 
 public enum FollowState{
@@ -73,10 +78,10 @@ public struct UserFollowRelationShip {
 public struct UserNotification {
     let type : UserNotificationType
     let text : String
-    let profilePicture : URL
+    let user : User
 }
 
 enum UserNotificationType {
-    case like
-    case follow
+    case like(post: UserModal)
+    case follow(state : FollowState)
 }

@@ -14,6 +14,7 @@ final class IGFeedPostTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.backgroundColor = UIColor.black
     }
     
     required init?(coder: NSCoder) {

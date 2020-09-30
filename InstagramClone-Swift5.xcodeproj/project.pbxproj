@@ -242,10 +242,10 @@
 		0E352321251CB19800C4FAD4 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
+				0E352328251CB2B400C4FAD4 /* IGFeedPostHeaderTableViewCell.swift */,
 				0E35231F251CB06400C4FAD4 /* IGFeedPostTableViewCell.swift */,
 				0E352324251CB24200C4FAD4 /* IGFeedPostActionTableViewCell.swift */,
 				0E352326251CB28C00C4FAD4 /* IGFeedPostGeneralTableViewCell.swift */,
-				0E352328251CB2B400C4FAD4 /* IGFeedPostHeaderTableViewCell.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
