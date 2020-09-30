@@ -16,5 +16,6 @@ target 'InstagramClone-Swift5' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
   pod 'Firebase/Storage'
-  
+  #SDWebImage
+  pod 'SDWebImage'
 end
