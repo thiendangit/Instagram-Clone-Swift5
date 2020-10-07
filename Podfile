@@ -18,5 +18,5 @@ target 'InstagramClone-Swift5' do
   pod 'Firebase/Storage'
   #SDWebImage
   pod 'SDWebImage'
-#  pod 'ReadMoreTextView'
+  pod 'ReadMoreTextView'
 end

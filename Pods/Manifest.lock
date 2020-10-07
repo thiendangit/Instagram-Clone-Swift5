@@ -94,6 +94,7 @@ PODS:
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
   - PromisesObjC (1.2.10)
+  - ReadMoreTextView (3.0.1)
   - SDWebImage (5.9.0):
     - SDWebImage/Core (= 5.9.0)
   - SDWebImage/Core (5.9.0)
@@ -106,6 +107,7 @@ DEPENDENCIES:
   - Firebase/Crashlytics
   - Firebase/Database
   - Firebase/Storage
+  - ReadMoreTextView
   - SDWebImage
 
 SPEC REPOS:
@@ -127,6 +129,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - ReadMoreTextView
     - SDWebImage
 
 SPEC CHECKSUMS:
@@ -147,8 +150,9 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
+  ReadMoreTextView: 19147adf93abce6d7271e14031a00303fe28720d
   SDWebImage: 62ae4a18473520c67b79e9724c31a63599cc9423
 
-PODFILE CHECKSUM: b308e8f06140876d58a6f18fe10c79a3a15cf1cd
+PODFILE CHECKSUM: 36237a9aafdb92f8b9fa46df12091fcdb6023554
 
 COCOAPODS: 1.9.3
