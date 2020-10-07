@@ -3,7 +3,7 @@
 
 target 'InstagramClone-Swift5' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+  use_frameworks! :linkage => :static
   
   # Pods for InstagramClone-Swift5
   
@@ -18,4 +18,5 @@ target 'InstagramClone-Swift5' do
   pod 'Firebase/Storage'
   #SDWebImage
   pod 'SDWebImage'
+#  pod 'ReadMoreTextView'
 end
