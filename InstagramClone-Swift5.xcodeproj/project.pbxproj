@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E0A3569252EC5050036871C /* FeedImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0A3568252EC5050036871C /* FeedImageCollectionViewCell.swift */; };
+		0E0A356E252EC9BB0036871C /* EEZoomableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0A356D252EC9BB0036871C /* EEZoomableImageView.swift */; };
 		0E3522D4251AFE9500C4FAD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3522D3251AFE9500C4FAD4 /* AppDelegate.swift */; };
 		0E3522D6251AFE9500C4FAD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3522D5251AFE9500C4FAD4 /* SceneDelegate.swift */; };
 		0E3522D8251AFE9500C4FAD4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3522D7251AFE9500C4FAD4 /* HomeViewController.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E0A3568252EC5050036871C /* FeedImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		0E0A356D252EC9BB0036871C /* EEZoomableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EEZoomableImageView.swift; sourceTree = "<group>"; };
 		0E3522D0251AFE9500C4FAD4 /* Tibb Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tibb Instagram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3522D3251AFE9500C4FAD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E3522D5251AFE9500C4FAD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		0E0A356A252EC9330036871C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0E35231A251C459D00C4FAD4 /* Utils.swift */,
+				0E0A356D252EC9BB0036871C /* EEZoomableImageView.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		0E3522C7251AFE9500C4FAD4 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +147,7 @@
 		0E3522D2251AFE9500C4FAD4 /* InstagramClone-Swift5 */ = {
 			isa = PBXGroup;
 			children = (
+				0E0A356A252EC9330036871C /* Utils */,
 				0E35230E251B2C7A00C4FAD4 /* GoogleService-Info.plist */,
 				0E3522EA251B021B00C4FAD4 /* Resources */,
 				0E3522E9251B021200C4FAD4 /* Models */,
@@ -182,7 +196,6 @@
 				0E352312251B37B900C4FAD4 /* AuthManager.swift */,
 				0E352316251B3C6400C4FAD4 /* StorageManager.swift */,
 				0E352318251B403300C4FAD4 /* Extensions.swift */,
-				0E35231A251C459D00C4FAD4 /* Utils.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -249,6 +262,7 @@
 			children = (
 				0EE18908252D77E600B96B05 /* FeedTableViewCell.swift */,
 				0EAFCF11252D9BF3007A84CB /* StoryCollectionViewCell.swift */,
+				0E0A3568252EC5050036871C /* FeedImageCollectionViewCell.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -422,6 +436,7 @@
 			files = (
 				0E3522FA251B094300C4FAD4 /* PostViewController.swift in Sources */,
 				0E3522FE251B099900C4FAD4 /* SettingViewController.swift in Sources */,
+				0E0A3569252EC5050036871C /* FeedImageCollectionViewCell.swift in Sources */,
 				0E352300251B09D100C4FAD4 /* ListViewController.swift in Sources */,
 				0E3522F3251B071700C4FAD4 /* CameraViewController..swift in Sources */,
 				0E352333251DF35000C4FAD4 /* ProfileTabsHeaderCollectionReusableView.swift in Sources */,
@@ -441,6 +456,7 @@
 				0E352319251B403300C4FAD4 /* Extensions.swift in Sources */,
 				0E352311251B30AE00C4FAD4 /* DatabaseManager.swift in Sources */,
 				0E3522F6251B08E400C4FAD4 /* LoginViewController.swift in Sources */,
+				0E0A356E252EC9BB0036871C /* EEZoomableImageView.swift in Sources */,
 				0E352304251B09FB00C4FAD4 /* SearchResultViewController.swift in Sources */,
 				0E352302251B09EF00C4FAD4 /* SearchViewController.swift in Sources */,
 				0E3522D4251AFE9500C4FAD4 /* AppDelegate.swift in Sources */,

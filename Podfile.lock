@@ -88,6 +88,7 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.4.0)
   - leveldb-library (1.22)
+  - lottie-ios (3.1.8)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
     - nanopb/encode (= 1.30906.0)
@@ -98,6 +99,7 @@ PODS:
   - SDWebImage (5.9.0):
     - SDWebImage/Core (= 5.9.0)
   - SDWebImage/Core (5.9.0)
+  - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Appirater
@@ -107,8 +109,10 @@ DEPENDENCIES:
   - Firebase/Crashlytics
   - Firebase/Database
   - Firebase/Storage
+  - lottie-ios
   - ReadMoreTextView
   - SDWebImage
+  - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
@@ -127,10 +131,12 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - leveldb-library
+    - lottie-ios
     - nanopb
     - PromisesObjC
     - ReadMoreTextView
     - SDWebImage
+    - SnapKit
 
 SPEC CHECKSUMS:
   Appirater: 44a4651f7912a17dc906b655f0c215d5bb768b84
@@ -148,11 +154,13 @@ SPEC CHECKSUMS:
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
   ReadMoreTextView: 19147adf93abce6d7271e14031a00303fe28720d
   SDWebImage: 62ae4a18473520c67b79e9724c31a63599cc9423
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 36237a9aafdb92f8b9fa46df12091fcdb6023554
+PODFILE CHECKSUM: 5e23dd84c59db4048fefb3d831deaca3484d2c90
 
 COCOAPODS: 1.9.3

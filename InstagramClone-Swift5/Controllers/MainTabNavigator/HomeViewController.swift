@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseAuth
-//import ReadMoreTextView
+import ReadMoreTextView
 
 struct HomeRenderViewModel {
     let header : PostRenderViewModel
@@ -21,12 +21,8 @@ class HomeViewController: UIViewController {
     
     var feedRenderModels = [HomeRenderViewModel]()
     
-    //       @IBOutlet weak var topReadMoreTextView: ReadMoreTextView!
-    //       @IBOutlet weak var readMoreTextView: ReadMoreTextView!
     @IBOutlet weak var tableView: UITableView! {
         didSet {
-            tableView.estimatedRowHeight = 200
-            tableView.rowHeight = UITableView.automaticDimension
         }
     }
     var expandedCells = Set<Int>()
@@ -53,7 +49,7 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        //        tableView.reloadData()
+        tableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,55 +70,48 @@ class HomeViewController: UIViewController {
 extension HomeViewController : UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 50
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
-        //            let readMoreTextView = cell.contentView.viewWithTag(1) as! ReadMoreTextView
-        //            readMoreTextView.shouldTrim = !expandedCells.contains(indexPath.row)
-        //            readMoreTextView.setNeedsUpdateTrim()
-        //            readMoreTextView.layoutIfNeeded()
+        let readMoreTextView = cell.contentView.viewWithTag(1) as! ReadMoreTextView
+        readMoreTextView.shouldTrim = !expandedCells.contains(indexPath.row)
+        readMoreTextView.setNeedsUpdateTrim()
+        readMoreTextView.layoutIfNeeded()
         return cell
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let readMoreTextView = cell.contentView.viewWithTag(1) as! ReadMoreTextView
+        print(cell as Any)
+        readMoreTextView.onSizeChange = { [unowned tableView, unowned self] r in
+            print("r : \(r)")
+            let point = tableView.convert(r.bounds.origin, from: r)
+            print("point : \(point)")
+            guard let indexPath = tableView.indexPathForRow(at: point) else { return }
+            if r.shouldTrim {
+                self.expandedCells.remove(indexPath.row)
+            } else {
+                self.expandedCells.insert(indexPath.row)
+            }
+            tableView.reloadData()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 800
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        //            let readMoreTextView = cell.contentView.viewWithTag(1) as! ReadMoreTextView
-        //            let cell = cell.contentView.viewWithTag(3) as? UISwitch
-        //            print(cell as Any)
-        //            readMoreTextView.onSizeChange = { [unowned tableView, unowned self] r in
-        //                 print("r : \(r)")
-        //                let point = tableView.convert(r.bounds.origin, from: r)
-        //                print("point : \(point)")
-        //                guard let indexPath = tableView.indexPathForRow(at: point) else { return }
-        //                if r.shouldTrim {
-        //                    self.expandedCells.remove(indexPath.row)
-        //                } else {
-        //                    self.expandedCells.insert(indexPath.row)
-        //                }
-        //                tableView.reloadData()
-        //            }
+    // Swift 4.2 onwards
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //            let cell = tableView.cellForRow(at: indexPath)!
-        //            cell.selectionStyle = .none
-        //            let readMoreTextView = cell.contentView.viewWithTag(1) as! ReadMoreTextView
-        //            readMoreTextView.shouldTrim = !readMoreTextView.shouldTrim
-    }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        coordinator.animate(alongsideTransition: {_ in
-            //                self.readMoreTextView.setNeedsUpdateTrim()
-            //                self.topReadMoreTextView.setNeedsUpdateTrim()
-        }, completion: nil)
+        let cell = tableView.cellForRow(at: indexPath)!
+        cell.selectionStyle = .none
+        let readMoreTextView = cell.contentView.viewWithTag(1) as! ReadMoreTextView
+        readMoreTextView.shouldTrim = !readMoreTextView.shouldTrim
     }
 }
