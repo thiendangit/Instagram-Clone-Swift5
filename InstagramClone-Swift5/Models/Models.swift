@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public enum UserPostType : String {
     case photo = "Photo"
@@ -35,7 +36,7 @@ struct UserCount {
 
 public struct UserModal {
     let postType : UserPostType
-    let thumbnailImage : URL
+    let thumbnailImage : [URL]
     let postURL : URL
     let caption : String?
     let likeCout : [PostLike]
@@ -43,6 +44,8 @@ public struct UserModal {
     let createDate : Date
     let targetUser : [User]
     let owner : User
+    var bookmarked : Bool
+    var liked : Bool
 }
 
 struct PostLike {
@@ -61,6 +64,11 @@ struct PostComment {
     let text : String
     let createDate : Date
     let likes : [CommentLike]
+}
+
+public struct Post {
+    var postDetails : UserModal
+    var comments: [PostComment]
 }
 
 public enum FollowState{

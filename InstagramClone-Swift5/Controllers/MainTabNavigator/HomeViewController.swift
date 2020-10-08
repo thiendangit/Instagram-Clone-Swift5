@@ -10,16 +10,9 @@ import UIKit
 import FirebaseAuth
 import ReadMoreTextView
 
-struct HomeRenderViewModel {
-    let header : PostRenderViewModel
-    let primaryContent : PostRenderViewModel
-    let actions : PostRenderViewModel
-    let comments : PostRenderViewModel
-}
-
 class HomeViewController: UIViewController {
     
-    var feedRenderModels = [HomeRenderViewModel]()
+    var feedRenderModels = [Post]()
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -31,20 +24,32 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        configure()
     }
     
     private func configure(){
         //        let x = 1
         var comments = [PostComment]()
-        let user = User(username: "Jacky", bio: "@Jack Love The Game", counts: UserCount(followers: 300, following: 399, posts: 100), name: (first: "Jacky", last: "Love"), birthday: Date(), gender: .Male, joinDate:  Date(), thumbnailImage: URL(string: "https://lh3.googleusercontent.com/proxy/VowhQs2NjLKuCp0u_EhKwlzS-YAH-NLX1jERqihl7Y92vdSYM4mBjdQTD4HhhgWZkSrGZCAgn8WXwITtXoT76-nP-A_AxTBbE8qE7wGejKHPCwFJ2Xk")!)
+        let user = User(username: "Đăng Tibbers", bio: "@ĐăngTibbers Love Swift Code", counts: UserCount(followers: 300, following: 399, posts: 100), name: (first: "Jacky", last: "Love"), birthday: Date(), gender: .Male, joinDate:  Date(), thumbnailImage: URL(string: "https://meohayaz.com/wp-content/uploads/2020/03/Tr%E1%BB%8Dn-b%E1%BB%99-nh%E1%BB%AFng-h%C3%ACnh-%E1%BA%A3nh-%C4%91%E1%BA%B9p-girl-xinh-cho-%C4%91i%E1%BB%87n-tho%E1%BA%A1i.jpg")!)
         
-        let post = UserModal(postType: .photo, thumbnailImage: URL(string: "https://banner2.cleanpng.com/20180713/tpv/kisspng-computer-icons-x-mark-clip-art-old-letters-5b4860c9c00b11.6777014015314700257866.jpg")!,postURL: URL(string: "https://www.youtube.com/")!, caption: "Have a good day !", likeCout: [], comments: [], createDate: Date(), targetUser: [], owner: user)
+        let postLike = [PostLike(username: "thien dang", postIdentifier: "1233123"),PostLike(username: "thien dang", postIdentifier: "1233123"),
+        PostLike(username: "thien dang", postIdentifier: "1233123"),
+        PostLike(username: "thien dang", postIdentifier: "1233123"),
+        PostLike(username: "thien dang", postIdentifier: "1233123"),
+        PostLike(username: "thien dang", postIdentifier: "1233123"),
+        PostLike(username: "thien dang", postIdentifier: "1233123")]
+        
+        let post = UserModal(postType: .photo, thumbnailImage: [
+            URL(string:"https://i.guim.co.uk/img/media/03caad21d019a429e66df852c31d57872b79ceb9/0_14_2603_1562/master/2603.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=1de70e809602b3bc061b0536caa8c517")!,
+            URL(string: "https://media-cdn.tripadvisor.com/media/photo-s/09/d6/c2/ca/blue-wahle-mirissa.jpg")!,
+            URL(string: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSfpLg2Rk6GE9xxK9VrExfap-dW5uy8EX-GSA&usqp=CAU")!
+        ],postURL: URL(string: "https://www.youtube.com/")!, caption: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.", likeCout: postLike , comments: [], createDate: Date(), targetUser: [], owner: user, bookmarked: false, liked: false)
         //        let model = UserNotification(type: x%2 != 0 ? .like(post : post) : .follow(state : .not_follwing), text: "test", user: User(username: "Jacky", bio: "@Jack Love The Game", counts: UserCount(followers: 300, following: 399, posts: 100), name: (first: "Jacky", last: "Love"), birthday: Date(), gender: .Male, joinDate:  Date(), thumbnailImage: URL(string: "https://lh3.googleusercontent.com/proxy/VowhQs2NjLKuCp0u_EhKwlzS-YAH-NLX1jERqihl7Y92vdSYM4mBjdQTD4HhhgWZkSrGZCAgn8WXwITtXoT76-nP-A_AxTBbE8qE7wGejKHPCwFJ2Xk")!))
         for i in 0..<1 {
             comments.append(PostComment(identifier: "test\(i)", username: "Jacky Love", text: "Dịch văn bản: Dịch giữa 103 ngôn ngữ bằng cách nhập dữ liệu", createDate: Date(), likes: []))
         }
-        for _ in 0...1{
-            feedRenderModels.append(HomeRenderViewModel(header: PostRenderViewModel(renderType: .header(provider: user)), primaryContent: PostRenderViewModel(renderType: .primaryContent(provider: post)), actions: PostRenderViewModel(renderType: .actions(provider: "")), comments: PostRenderViewModel(renderType: .comments(provider: comments))))
+        for _ in 0...5{
+            feedRenderModels.append(Post(postDetails: post, comments: comments))
         }
     }
     
@@ -70,7 +75,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController : UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        return feedRenderModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,6 +84,7 @@ extension HomeViewController : UITableViewDataSource,UITableViewDelegate {
         readMoreTextView.shouldTrim = !expandedCells.contains(indexPath.row)
         readMoreTextView.setNeedsUpdateTrim()
         readMoreTextView.layoutIfNeeded()
+        cell.configure(post: feedRenderModels[indexPath.row])
         return cell
     }
     
@@ -104,7 +110,7 @@ extension HomeViewController : UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    // Swift 4.2 onwards
+        // Swift 4.2 onwards
         return UITableView.automaticDimension
     }
     
@@ -115,3 +121,55 @@ extension HomeViewController : UITableViewDataSource,UITableViewDelegate {
         readMoreTextView.shouldTrim = !readMoreTextView.shouldTrim
     }
 }
+
+extension HomeViewController : FeedTableViewCellDelegate{
+    func didTapImageAndUserName() {
+        
+    }
+    
+    func didTapMoreButton() {
+        
+    }
+    
+    func didTapHeartButton() {
+        
+    }
+    
+    func didTapMessageButton() {
+        
+    }
+    
+    func didTapSendButton() {
+        
+    }
+    
+    func didTapTagButton() {
+        
+    }
+    
+    func didSeeMoreMessage() {
+        
+    }
+    
+    func didTapImageAndUserNameFooter() {
+        
+    }
+    
+    func didTapHeartFooterButton() {
+        
+    }
+    
+    func didTapHandFooterButton() {
+        
+    }
+    
+    func didTapAddFooterButton() {
+        
+    }
+    
+    func didTapSeeMoreMessage(){
+        
+    }
+}
+
+

@@ -59,6 +59,7 @@ PODS:
   - FirebaseStorage (3.9.0):
     - FirebaseCore (~> 6.10)
     - GTMSessionFetcher/Core (~> 1.1)
+  - FlexiblePageControl (1.0.8)
   - GoogleAppMeasurement (6.8.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
     - GoogleUtilities/MethodSwizzler (~> 6.7)
@@ -109,6 +110,7 @@ DEPENDENCIES:
   - Firebase/Crashlytics
   - Firebase/Database
   - Firebase/Storage
+  - FlexiblePageControl
   - lottie-ios
   - ReadMoreTextView
   - SDWebImage
@@ -126,6 +128,7 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseInstallations
     - FirebaseStorage
+    - FlexiblePageControl
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
@@ -149,6 +152,7 @@ SPEC CHECKSUMS:
   FirebaseDatabase: d85b47213273708e48c972012b39105f76229588
   FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
   FirebaseStorage: 33b92875a9b556824886cc7a65120c7d2cb3a8d8
+  FlexiblePageControl: 07f7765054f16b3f0bc3f14dfd95ab5f45817ea4
   GoogleAppMeasurement: ecc30d0ab5b66d7d18e85ce1b8e2b345db60626d
   GoogleDataTransport: e85fb700c9b027079ce182c3d08e12e0f9618bb4
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
@@ -161,6 +165,6 @@ SPEC CHECKSUMS:
   SDWebImage: 62ae4a18473520c67b79e9724c31a63599cc9423
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 5e23dd84c59db4048fefb3d831deaca3484d2c90
+PODFILE CHECKSUM: 7b1afe503515dbb743d0dcdc539512a545726058
 
 COCOAPODS: 1.9.3

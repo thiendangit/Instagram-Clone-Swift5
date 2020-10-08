@@ -14,8 +14,8 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     static let identifier = "PhotoCollectionViewCell"
     
     public func configure(with model : UserModal) {
-        let thumbnailImage : URL = model.thumbnailImage
-        photoImageView.sd_setImage(with: thumbnailImage, completed: nil)
+        let thumbnailImage = model.thumbnailImage
+        photoImageView.sd_setImage(with: thumbnailImage[0], completed: nil)
     }
     
     public func configure(debug image : String) {

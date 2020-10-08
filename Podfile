@@ -21,6 +21,7 @@ target 'InstagramClone-Swift5' do
   pod 'ReadMoreTextView'
   pod 'SnapKit', '~> 5.0.0'
   pod 'lottie-ios'
+  pod 'FlexiblePageControl'
 
   post_install do |installer|
       installer.pods_project.build_configurations.each do |config|

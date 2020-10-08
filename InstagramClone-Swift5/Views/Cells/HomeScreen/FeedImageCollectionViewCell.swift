@@ -17,8 +17,8 @@ class FeedImageCollectionViewCell: UICollectionViewCell {
            super.awakeFromNib()
        }
        
-       func configure(image: UIImage){
-//           self.imgView.image = image
+       func configure(url: URL){
+        self.imgView.sd_setImage(with: url, completed: nil)
        }
        
 }
