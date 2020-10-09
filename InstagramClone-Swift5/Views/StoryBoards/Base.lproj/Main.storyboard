@@ -136,7 +136,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="413" height="388"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whaleShark" translatesAutoresizingMaskIntoConstraints="NO" id="HlQ-I2-hIq" customClass="EEZoomableImageView" customModule="EEZoomableImageView">
+                                                                    <imageView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whaleShark" translatesAutoresizingMaskIntoConstraints="NO" id="HlQ-I2-hIq">
                                                                         <rect key="frame" x="0.0" y="0.0" width="413" height="388"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="413" id="GSV-1j-xiU"/>
@@ -243,7 +243,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IY6-Gl-1z7" customClass="ReadMoreTextView" customModule="ReadMoreTextView">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" ambiguous="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="IY6-Gl-1z7" customClass="ReadMoreTextView" customModule="ReadMoreTextView">
                                                     <rect key="frame" x="13" y="543" width="388" height="67"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>

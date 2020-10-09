@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E0A3569252EC5050036871C /* FeedImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0A3568252EC5050036871C /* FeedImageCollectionViewCell.swift */; };
 		0E0A356E252EC9BB0036871C /* EEZoomableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0A356D252EC9BB0036871C /* EEZoomableImageView.swift */; };
+		0E0A3571252F2E1E0036871C /* heart.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E0A3570252F2E1E0036871C /* heart.json */; };
 		0E3522D4251AFE9500C4FAD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3522D3251AFE9500C4FAD4 /* AppDelegate.swift */; };
 		0E3522D6251AFE9500C4FAD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3522D5251AFE9500C4FAD4 /* SceneDelegate.swift */; };
 		0E3522D8251AFE9500C4FAD4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3522D7251AFE9500C4FAD4 /* HomeViewController.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		0E0A3568252EC5050036871C /* FeedImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E0A356D252EC9BB0036871C /* EEZoomableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EEZoomableImageView.swift; sourceTree = "<group>"; };
+		0E0A3570252F2E1E0036871C /* heart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heart.json; sourceTree = "<group>"; };
 		0E3522D0251AFE9500C4FAD4 /* Tibb Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tibb Instagram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3522D3251AFE9500C4FAD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E3522D5251AFE9500C4FAD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		0E0A356F252F2E1E0036871C /* Lottie Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E0A3570252F2E1E0036871C /* heart.json */,
+			);
+			path = "Lottie Files";
+			sourceTree = "<group>";
+		};
 		0E3522C7251AFE9500C4FAD4 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +175,7 @@
 				0E35232F251DF06900C4FAD4 /* CollectionView Headers */,
 				0E35231E251CAFDC00C4FAD4 /* Cells */,
 				0E3522DC251AFE9600C4FAD4 /* Assets.xcassets */,
+				0E0A356F252F2E1E0036871C /* Lottie Files */,
 				0E3522EB251B029400C4FAD4 /* StoryBoards */,
 			);
 			path = Views;
@@ -381,6 +392,7 @@
 				0E3522E0251AFE9600C4FAD4 /* LaunchScreen.storyboard in Resources */,
 				0E35230F251B2C7A00C4FAD4 /* GoogleService-Info.plist in Resources */,
 				0E3522DD251AFE9600C4FAD4 /* Assets.xcassets in Resources */,
+				0E0A3571252F2E1E0036871C /* heart.json in Resources */,
 				0E3522DB251AFE9500C4FAD4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,8 @@
 
 import UIKit
 import ReadMoreTextView
-
+import Lottie
+import SnapKit
 
 protocol FeedTableViewCellDelegate {
     func didTapImageAndUserName()
@@ -29,6 +30,7 @@ class FeedTableViewCell: UITableViewCell {
     
     var delegate : FeedTableViewCellDelegate?
     var post : Post?
+    var animationView = AnimationView(name: "heart")
     //headerPost
     @IBOutlet weak var profileSectionView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -122,6 +124,34 @@ class FeedTableViewCell: UITableViewCell {
         setUpActionsView()
         setUpDetailsPost()
         setUpFooterPost()
+        setUpImagePost()
+        readMoreTextView.shouldTrim = true
+    }
+    
+    func setUpImagePost(){
+        animationView.animationSpeed = 1.2
+        animationView.loopMode = .playOnce
+        self.contentView.addSubview(animationView)
+        animationView.snp.makeConstraints({ make in
+            make.height.width.equalTo(110)
+            make.center.equalTo(imageCollectionView)
+        })
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(animateHeart))
+        let doubleTapAnimationView = UITapGestureRecognizer(target: self, action: #selector(animateHeart))
+        doubleTap.numberOfTapsRequired = 2
+        doubleTapAnimationView.numberOfTapsRequired = 2
+        imageCollectionView.isUserInteractionEnabled = true
+        imageCollectionView.addGestureRecognizer(doubleTap)
+        animationView.isUserInteractionEnabled = true
+        animationView.addGestureRecognizer(doubleTapAnimationView)
+    }
+    
+    @objc func animateHeart(){
+        UIImpactFeedbackGenerator.init(style: .light).impactOccurred()
+        animationView.play()
+        heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        heartButton.tintColor = .systemRed
+        post!.postDetails.liked = true
     }
     
     func setUpImageAndUserNameLbl(){
@@ -251,6 +281,27 @@ class FeedTableViewCell: UITableViewCell {
         readMoreTextView.shouldTrim = true
         imageView?.layer.cornerRadius = 0
         imageView?.sd_setImage(with: nil, completed: nil)
+        profileImageView.layer.cornerRadius = 0
+        profileImageView.layer.cornerRadius = 0
+        profileImageView.isUserInteractionEnabled = false
+        //userNameLbl
+        userNameLbl.isUserInteractionEnabled = false
+        imageFooterView.layer.cornerRadius = 0
+        //imageFooterView
+        imageFooterView.isUserInteractionEnabled = false
+        //moreCommentFooterButton
+        moreCommentFooterButton.isUserInteractionEnabled = false
+        //heartFooterButton
+        heartFooterButton.isUserInteractionEnabled = false
+        //HandFooterButton
+        handFooterButton.isUserInteractionEnabled = false
+        //AddFooterButton
+        plusFooterButton.isUserInteractionEnabled = false
+        profileImageView.sd_setImage(with: nil, completed: nil)
+        imageFooterView.sd_setImage(with: nil, completed: nil)
+        userNameLbl.text = nil
+        numberOfLikeLbl.text = nil
+        readMoreTextView.attributedText = nil
     }
 }
 

@@ -48,7 +48,7 @@ class HomeViewController: UIViewController {
         for i in 0..<1 {
             comments.append(PostComment(identifier: "test\(i)", username: "Jacky Love", text: "Dịch văn bản: Dịch giữa 103 ngôn ngữ bằng cách nhập dữ liệu", createDate: Date(), likes: []))
         }
-        for _ in 0...5{
+        for _ in 0...29{
             feedRenderModels.append(Post(postDetails: post, comments: comments))
         }
     }
@@ -117,8 +117,8 @@ extension HomeViewController : UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)!
         cell.selectionStyle = .none
-        let readMoreTextView = cell.contentView.viewWithTag(1) as! ReadMoreTextView
-        readMoreTextView.shouldTrim = !readMoreTextView.shouldTrim
+//        let readMoreTextView = cell.contentView.viewWithTag(1) as! ReadMoreTextView
+//        readMoreTextView.shouldTrim = !readMoreTextView.shouldTrim
     }
 }
 
