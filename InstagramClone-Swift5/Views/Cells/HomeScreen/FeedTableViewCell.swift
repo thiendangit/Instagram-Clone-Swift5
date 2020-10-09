@@ -279,14 +279,10 @@ class FeedTableViewCell: UITableViewCell {
         super.prepareForReuse()
         readMoreTextView.onSizeChange = {_ in }
         readMoreTextView.shouldTrim = true
-        imageView?.layer.cornerRadius = 0
         imageView?.sd_setImage(with: nil, completed: nil)
-        profileImageView.layer.cornerRadius = 0
-        profileImageView.layer.cornerRadius = 0
         profileImageView.isUserInteractionEnabled = false
         //userNameLbl
         userNameLbl.isUserInteractionEnabled = false
-        imageFooterView.layer.cornerRadius = 0
         //imageFooterView
         imageFooterView.isUserInteractionEnabled = false
         //moreCommentFooterButton

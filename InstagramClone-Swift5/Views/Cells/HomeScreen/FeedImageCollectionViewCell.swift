@@ -20,5 +20,10 @@ class FeedImageCollectionViewCell: UICollectionViewCell {
        func configure(url: URL){
         self.imgView.sd_setImage(with: url, completed: nil)
        }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imgView.sd_setImage(with: nil, completed: nil)
+    }
        
 }
