@@ -277,7 +277,7 @@ class FeedTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        readMoreTextView.onSizeChange = {_ in }
+        readMoreTextView.onSizeChange = { _ in }
         readMoreTextView.shouldTrim = true
         imageView?.sd_setImage(with: nil, completed: nil)
         profileImageView.isUserInteractionEnabled = false

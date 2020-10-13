@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
-            tableView.estimatedRowHeight = 400
+            tableView.estimatedRowHeight = 100
             tableView.rowHeight = UITableView.automaticDimension
         }
     }
@@ -148,15 +148,6 @@ extension HomeViewController : UITableViewDataSource,UITableViewDelegate {
             }
             tableView.reloadData()
         }
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        // Swift 4.2 onwards
-        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

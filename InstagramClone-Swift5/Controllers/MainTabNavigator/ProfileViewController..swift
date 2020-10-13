@@ -11,6 +11,10 @@ import UIKit
 class ProfileViewController: UIViewController {
     var CollectionView : UICollectionView?
     var userPosts : [UserModal] = [UserModal]()
+    var user : User?
+    var bioTextHeight : CGFloat? = nil
+    var defaultHeaderHeight : CGFloat = 0
+    var headerHeight : CGFloat = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -34,8 +38,17 @@ class ProfileViewController: UIViewController {
         collectionView.register(ProfileTabsHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileTabsHeaderCollectionReusableView.identifier)
         collectionView.register(ProfileInfoHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfileInfoHeaderCollectionReusableView.identifier)
         view.addSubview(collectionView)
+        configure()
     }
     
+    func configure() {
+        let currentUser = User(username: "Tibb", bio: "Singer/Actress 🇻🇳\nFounder of @gom.entertainment\n📸 @filmbychipu\nDreams Don't Work Unless You Do. \nhttps://www.instagram.com/chipupu/", counts: UserCount(followers: 300, following: 399, posts: 100), name: (first: "Tibb", last: "K"), birthday: Date(), gender: .Male, joinDate:  Date(), thumbnailImage: URL(string: "https://i.pinimg.com/originals/0b/8f/b1/0b8fb17b3bb7caba4b30123a74bd21fb.jpg")!)
+        user = currentUser
+        defaultHeaderHeight = view.height/5.5
+        bioTextHeight = String(currentUser.bio).height(withConstrainedWidth: view.width, font: UIFont.systemFont(ofSize: config.fontSizeDefault))
+        headerHeight = defaultHeaderHeight + bioTextHeight!
+        
+    }
     override func viewDidLayoutSubviews() {
         CollectionView?.frame = view.bounds
     }
@@ -94,19 +107,24 @@ extension ProfileViewController : UICollectionViewDelegate,UICollectionViewDataS
         }
         //tabs
         if(indexPath.section == 1 ){
-            let tabContentView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileTabsHeaderCollectionReusableView.identifier, for: indexPath) as! ProfileTabsHeaderCollectionReusableView
-            tabContentView.delegate = self
-            return tabContentView
+            let tabCell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileTabsHeaderCollectionReusableView.identifier, for: indexPath) as! ProfileTabsHeaderCollectionReusableView
+            tabCell.delegate = self
+            return tabCell
         }
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileInfoHeaderCollectionReusableView.identifier, for: indexPath) as! ProfileInfoHeaderCollectionReusableView
-        header.delegate = self
-        return header
+        let headerCell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileInfoHeaderCollectionReusableView.identifier, for: indexPath) as! ProfileInfoHeaderCollectionReusableView
+        headerCell.delegate = self
+        guard let user = user else {
+            return UICollectionReusableView()
+        }
+        bioTextHeight = String(user.bio).height(withConstrainedWidth: view.width, font: UIFont.systemFont(ofSize: config.fontSizeDefault))
+        headerCell.configure(user: user, bioTextHeight : bioTextHeight ?? 20)
+        return headerCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
         if(section == 0){
-            return CGSize(width: view.width, height: view.height/4)
+            return CGSize(width: view.width, height: headerHeight)
         }
         //size of tabs
         return CGSize(width: view.width, height : 50)
