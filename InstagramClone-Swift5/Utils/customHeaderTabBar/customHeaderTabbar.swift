@@ -16,8 +16,6 @@ class CustomSegmentedContrl: UIControl {
     var selector: UIView!
     var selectedSegmentIndex = 0
     
-    
-    
     @IBInspectable var borderWidth: CGFloat = 0 {
         
         didSet {
@@ -25,14 +23,12 @@ class CustomSegmentedContrl: UIControl {
         }
     }
     
-    
     @IBInspectable var cornerRadius: CGFloat = 0 {
         
         didSet {
             layer.cornerRadius = cornerRadius
         }
     }
-    
     
     @IBInspectable var borderColor: UIColor = .clear {
         
@@ -48,13 +44,19 @@ class CustomSegmentedContrl: UIControl {
         }
     }
     
+    @IBInspectable var commaSeperatedButtonImages: String = "" {
+         
+         didSet {
+             updateView()
+         }
+     }
+    
     @IBInspectable var textColor: UIColor = .lightGray {
         
         didSet {
             updateView()
         }
     }
-    
     
     @IBInspectable var selectorColor: UIColor = .darkGray {
         
@@ -87,16 +89,12 @@ class CustomSegmentedContrl: UIControl {
         subviews.forEach { (view) in
             view.removeFromSuperview()
         }
+
+        let buttonTabbarsTitle = commaSeperatedButtonTitles.components(separatedBy: ",")
         
-        
-        
-        
-        let buttonTitles = commaSeperatedButtonTitles.components(separatedBy: ",")
-        
-        for buttonTitle in buttonTitles {
-            
+        for buttonTabbar in buttonTabbarsTitle {
             let button = UIButton.init(type: .system)
-            button.setTitle(buttonTitle, for: .normal)
+            button.setTitle(buttonTabbar, for: .normal)
             button.setTitleColor(textColor, for: .normal)
             button.addTarget(self, action: #selector(buttonTapped(button:)), for: .touchUpInside)
             buttons.append(button)
@@ -105,7 +103,7 @@ class CustomSegmentedContrl: UIControl {
         
         buttons[0].setTitleColor(selectorTextColor, for: .normal)
         
-        let selectorWidth = frame.width / CGFloat(buttonTitles.count)
+        let selectorWidth = frame.width / CGFloat(buttonTabbarsTitle.count)
         
         let y =    (self.frame.maxY - self.frame.minY) - 3.0
         
@@ -145,8 +143,7 @@ class CustomSegmentedContrl: UIControl {
     
 
     @objc func buttonTapped(button: UIButton) {
-        
-        
+
         for (buttonIndex,btn) in buttons.enumerated() {
             
             btn.setTitleColor(textColor, for: .normal)
@@ -156,7 +153,7 @@ class CustomSegmentedContrl: UIControl {
                 
                 let  selectorStartPosition = frame.width / CGFloat(buttons.count) * CGFloat(buttonIndex)
                 
-                UIView.animate(withDuration: 0.3, animations: {
+                UIView.animate(withDuration: config.speedAnimatedTabbar , animations: {
                     
                     self.selector.frame.origin.x = selectorStartPosition
                 })
@@ -181,7 +178,7 @@ class CustomSegmentedContrl: UIControl {
         
         let  selectorStartPosition = frame.width / CGFloat(buttons.count) * CGFloat(index)
         
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: config.speedAnimatedTabbar , animations: {
             
             self.selector.frame.origin.x = selectorStartPosition
         })
@@ -192,19 +189,19 @@ class CustomSegmentedContrl: UIControl {
 
    
     
-//    override func sendActions(for controlEvents: UIControlEvents) {
-//
-//        super.sendActions(for: controlEvents)
-//
-//        let  selectorStartPosition = frame.width / CGFloat(buttons.count) * CGFloat(selectedSegmentIndex)
-//
-//        UIView.animate(withDuration: 0.3, animations: {
-//
-//            self.selector.frame.origin.x = selectorStartPosition
-//        })
-//
-//        buttons[selectedSegmentIndex].setTitleColor(selectorTextColor, for: .normal)
-//
-//    }
+    override func sendActions(for controlEvents: UIControl.Event) {
+
+        super.sendActions(for: controlEvents)
+
+        let  selectorStartPosition = frame.width / CGFloat(buttons.count) * CGFloat(selectedSegmentIndex)
+
+        UIView.animate(withDuration: config.speedAnimatedTabbar , animations: {
+
+            self.selector.frame.origin.x = selectorStartPosition
+        })
+
+        buttons[selectedSegmentIndex].setTitleColor(selectorTextColor, for: .normal)
+
+    }
     
 }

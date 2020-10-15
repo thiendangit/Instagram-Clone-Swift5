@@ -279,7 +279,6 @@ class FeedTableViewCell: UITableViewCell {
         super.prepareForReuse()
         readMoreTextView.onSizeChange = { _ in }
         readMoreTextView.shouldTrim = true
-        imageView?.sd_setImage(with: nil, completed: nil)
         profileImageView.isUserInteractionEnabled = false
         //userNameLbl
         userNameLbl.isUserInteractionEnabled = false
@@ -313,7 +312,7 @@ extension FeedTableViewCell:  UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: contentView.width, height: 388)
+        return CGSize(width: collectionView.width, height: collectionView.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -322,6 +321,10 @@ extension FeedTableViewCell:  UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView : UICollectionView, layout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt: Int) -> CGFloat{
         return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

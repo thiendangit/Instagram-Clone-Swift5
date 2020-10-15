@@ -93,3 +93,8 @@ enum UserNotificationType {
     case like(post: UserModal)
     case follow(state : FollowState)
 }
+
+struct ImagesModalForTabar {
+    var title : String?
+    var image : UIImage?
+}

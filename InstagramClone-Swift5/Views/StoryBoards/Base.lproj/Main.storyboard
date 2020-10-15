@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PmF-6R-daA">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -38,7 +38,7 @@
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vqy-L0-JpP">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -54,7 +54,7 @@
             <objects>
                 <viewController id="k47-BY-q8t" customClass="HomeViewController" customModule="Tibb_Instagram" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N8S-Ng-z2n">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="500" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="voc-eq-cPv">
@@ -148,12 +148,11 @@
                                                         <constraint firstAttribute="height" constant="68" id="olr-FN-WV6"/>
                                                     </constraints>
                                                 </view>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="a9G-Yp-C4P">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="a9G-Yp-C4P">
                                                     <rect key="frame" x="0.0" y="60" width="414" height="388"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="414" id="Vuo-TT-wAR"/>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="388" id="z5z-TR-gA1"/>
+                                                        <constraint firstAttribute="height" constant="388" id="kvm-mi-Jmj"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EXY-4L-JWW">
                                                         <size key="itemSize" width="413" height="388"/>
@@ -172,17 +171,11 @@
                                                                     <imageView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whaleShark" translatesAutoresizingMaskIntoConstraints="NO" id="HlQ-I2-hIq">
                                                                         <rect key="frame" x="0.0" y="0.0" width="413" height="388"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="413" id="GSV-1j-xiU"/>
-                                                                            <constraint firstAttribute="height" constant="388" id="zco-6d-F4h"/>
+                                                                            <constraint firstAttribute="width" constant="413" id="Lww-Qs-YjG"/>
+                                                                            <constraint firstAttribute="height" constant="388" id="b7A-X6-WJC"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                 </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="HlQ-I2-hIq" firstAttribute="leading" secondItem="SuR-jj-IO5" secondAttribute="leading" id="1tF-gd-LUl"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="HlQ-I2-hIq" secondAttribute="trailing" id="93J-U3-74e"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="HlQ-I2-hIq" secondAttribute="bottom" id="mXA-fV-ror"/>
-                                                                    <constraint firstItem="HlQ-I2-hIq" firstAttribute="top" secondItem="SuR-jj-IO5" secondAttribute="top" id="rP2-XP-Xp6"/>
-                                                                </constraints>
                                                             </collectionViewCellContentView>
                                                             <connections>
                                                                 <outlet property="imgView" destination="HlQ-I2-hIq" id="16e-pH-icF"/>
@@ -360,21 +353,23 @@
                                                 <constraint firstItem="9qy-z5-gAC" firstAttribute="top" secondItem="IY6-Gl-1z7" secondAttribute="bottom" id="3lD-ac-Bs8"/>
                                                 <constraint firstAttribute="trailing" secondItem="IY6-Gl-1z7" secondAttribute="trailing" constant="13" id="5K9-sD-GCc"/>
                                                 <constraint firstItem="hl0-x5-a0V" firstAttribute="leading" secondItem="r3D-Mg-2PT" secondAttribute="leading" id="91f-oj-JUv"/>
-                                                <constraint firstItem="hl0-x5-a0V" firstAttribute="top" secondItem="a9G-Yp-C4P" secondAttribute="bottom" constant="8" id="ANv-qg-cmK"/>
+                                                <constraint firstItem="a9G-Yp-C4P" firstAttribute="width" secondItem="hl0-x5-a0V" secondAttribute="width" id="A1a-2R-Qxh"/>
                                                 <constraint firstItem="he7-2t-YUw" firstAttribute="leading" secondItem="r3D-Mg-2PT" secondAttribute="leading" id="Afi-3w-GhY"/>
+                                                <constraint firstItem="a9G-Yp-C4P" firstAttribute="leading" secondItem="hl0-x5-a0V" secondAttribute="leading" id="HZZ-V5-rz7"/>
                                                 <constraint firstItem="9qy-z5-gAC" firstAttribute="trailing" secondItem="r3D-Mg-2PT" secondAttribute="trailingMargin" constant="13" id="HpX-yf-bBk"/>
+                                                <constraint firstItem="a9G-Yp-C4P" firstAttribute="trailing" secondItem="hl0-x5-a0V" secondAttribute="trailing" id="IwP-Ac-ykh"/>
                                                 <constraint firstAttribute="bottom" secondItem="0rv-xr-b8w" secondAttribute="bottom" constant="20" id="Kp1-Np-Df8"/>
                                                 <constraint firstAttribute="trailing" secondItem="he7-2t-YUw" secondAttribute="trailing" id="Mku-X8-Flb"/>
-                                                <constraint firstItem="a9G-Yp-C4P" firstAttribute="top" secondItem="he7-2t-YUw" secondAttribute="bottom" constant="5" id="PfH-bM-cJp"/>
-                                                <constraint firstAttribute="trailing" secondItem="a9G-Yp-C4P" secondAttribute="trailing" id="YC8-22-65P"/>
                                                 <constraint firstItem="IY6-Gl-1z7" firstAttribute="leading" secondItem="r3D-Mg-2PT" secondAttribute="leading" constant="13" id="cOc-Dd-azK"/>
+                                                <constraint firstItem="a9G-Yp-C4P" firstAttribute="top" secondItem="he7-2t-YUw" secondAttribute="bottom" constant="5" id="f0t-wo-u1x"/>
                                                 <constraint firstItem="9qy-z5-gAC" firstAttribute="leading" secondItem="r3D-Mg-2PT" secondAttribute="leading" constant="13" id="fGl-pW-lRe"/>
+                                                <constraint firstItem="a9G-Yp-C4P" firstAttribute="centerX" secondItem="r3D-Mg-2PT" secondAttribute="centerX" id="fud-vN-rD3"/>
                                                 <constraint firstItem="he7-2t-YUw" firstAttribute="top" secondItem="r3D-Mg-2PT" secondAttribute="top" id="kfj-Sz-cYw"/>
                                                 <constraint firstItem="IY6-Gl-1z7" firstAttribute="top" secondItem="x6D-ii-tkF" secondAttribute="bottom" id="ohw-b0-xHq"/>
-                                                <constraint firstItem="a9G-Yp-C4P" firstAttribute="leading" secondItem="r3D-Mg-2PT" secondAttribute="leading" id="pxB-oa-f3g"/>
                                                 <constraint firstItem="0rv-xr-b8w" firstAttribute="leading" secondItem="r3D-Mg-2PT" secondAttribute="leading" id="rIF-NC-Fg7"/>
                                                 <constraint firstItem="0rv-xr-b8w" firstAttribute="bottom" secondItem="1Tt-rK-sdv" secondAttribute="top" id="rkb-B9-hfK"/>
                                                 <constraint firstItem="0rv-xr-b8w" firstAttribute="top" secondItem="9qy-z5-gAC" secondAttribute="bottom" constant="5" id="syr-fX-Kr2"/>
+                                                <constraint firstItem="hl0-x5-a0V" firstAttribute="top" secondItem="a9G-Yp-C4P" secondAttribute="bottom" constant="8" id="ung-H9-ngr"/>
                                                 <constraint firstItem="1Tt-rK-sdv" firstAttribute="leading" secondItem="r3D-Mg-2PT" secondAttribute="leading" constant="13" id="uq5-G8-RNX"/>
                                                 <constraint firstAttribute="trailing" secondItem="hl0-x5-a0V" secondAttribute="trailing" id="uv5-uk-9Ml"/>
                                                 <constraint firstItem="x6D-ii-tkF" firstAttribute="top" secondItem="hl0-x5-a0V" secondAttribute="bottom" constant="8" id="vrx-hO-U04"/>
@@ -430,7 +425,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cUd-qA-xGP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1233.3333333333335" y="1723.6607142857142"/>
+            <point key="canvasLocation" x="-1234.7826086956522" y="1722.9910714285713"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TTx-Zd-Mwm">
@@ -438,7 +433,7 @@
                 <navigationController id="dJc-SS-Zzo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="c8F-9l-UyJ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vAg-LQ-NKn">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -455,7 +450,7 @@
                 <navigationController id="SRz-qX-vF1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="plus.app" catalog="system" id="3zL-xK-TZR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="683-xf-gWW">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -472,7 +467,7 @@
                 <navigationController id="c3a-c9-iB2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="suit.heart" catalog="system" id="eE0-g3-1th"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cv6-Kz-Fm2">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -489,7 +484,7 @@
                 <navigationController id="zpn-Fb-QsV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="person.crop.circle" catalog="system" id="hNE-Ug-bbi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sTF-23-6oC">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -505,7 +500,7 @@
             <objects>
                 <viewController id="i7o-gB-gJT" customClass="ExploreViewController" customModule="Tibb_Instagram" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d8u-tl-ZgL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="T22-oA-0PH"/>
@@ -521,7 +516,7 @@
             <objects>
                 <viewController id="6GG-lR-kW1" customClass="CameraViewController" customModule="Tibb_Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OvK-AM-Zc5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Asx-6h-mQK"/>
@@ -537,7 +532,7 @@
             <objects>
                 <viewController id="gk5-DC-Loq" customClass="NotificationViewController" customModule="Tibb_Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X5P-8A-fUp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="KUk-wd-btc"/>
@@ -553,7 +548,7 @@
             <objects>
                 <viewController id="2TZ-Y4-4YV" customClass="ProfileViewController" customModule="Tibb_Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rJz-Fm-JqN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="cSi-3F-s7k"/>
@@ -566,7 +561,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SplashLogo" width="256" height="256"/>
+        <image name="SplashLogo" width="170.66667175292969" height="170.66667175292969"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="hand.raised.fill" catalog="system" width="128" height="128"/>
         <image name="heart" catalog="system" width="128" height="109"/>

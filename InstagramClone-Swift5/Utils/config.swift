@@ -12,5 +12,6 @@ import UIKit
 struct config {
     static let fontSizeDefault : CGFloat = 17
     static let fontSizeBoldDefault : CGFloat = 20
+    static let speedAnimatedTabbar  : Double = 0.2
 }
 

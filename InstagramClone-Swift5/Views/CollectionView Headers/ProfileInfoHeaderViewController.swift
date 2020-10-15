@@ -9,19 +9,19 @@ import Foundation
 import UIKit
 
 protocol nameProfileInfoHeaderCollectionReusableDelegate : AnyObject {
-    func profileHeaderDidTapPostsButton(_ header : ProfileInfoHeaderCollectionReusableView)
-    func profileHeaderDidTapFollowersButton(_ header : ProfileInfoHeaderCollectionReusableView)
-    func profileHeaderDidTapFollwingButton(_ header : ProfileInfoHeaderCollectionReusableView)
-    func profileHeaderDidTapEditProfileButton(_ header : ProfileInfoHeaderCollectionReusableView)
+    func profileHeaderDidTapPostsButton(_ header : ProfileInfoHeaderViewController)
+    func profileHeaderDidTapFollowersButton(_ header : ProfileInfoHeaderViewController)
+    func profileHeaderDidTapFollwingButton(_ header : ProfileInfoHeaderViewController)
+    func profileHeaderDidTapEditProfileButton(_ header : ProfileInfoHeaderViewController)
 }
 
-class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
-    static let identifier = "ProfileInfoHeaderCollectionReusableView"
+class ProfileInfoHeaderViewController: UIViewController {
+    static let identifier = "ProfileInfoHeaderCView"
     
-    override init(frame: CGRect) {
-        super.init(frame : frame)
-        backgroundColor = .white
-        clipsToBounds = true
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        view.clipsToBounds = true
         addSubview()
         addActionTarget()
     }
@@ -29,13 +29,13 @@ class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
     var delegate : nameProfileInfoHeaderCollectionReusableDelegate?
     
     private func addSubview(){
-        addSubview(profilePhotoImageView)
-        addSubview(postsButtonView)
-        addSubview(followingButtonView)
-        addSubview(followersButtonView)
-        addSubview(editProfileButton)
-        addSubview(nameLabel)
-        addSubview(bioLabel)
+        view.addSubview(profilePhotoImageView)
+        view.addSubview(postsButtonView)
+        view.addSubview(followingButtonView)
+        view.addSubview(followersButtonView)
+        view.addSubview(editProfileButton)
+        view.addSubview(nameLabel)
+        view.addSubview(bioLabel)
     }
     
     private func addActionTarget(){
@@ -44,9 +44,10 @@ class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
         followersButtonView.addTarget(self, action: #selector(didTapFollowersButton), for: .touchUpInside)
         editProfileButton.addTarget(self, action: #selector(didTapEditProfileButton), for: .touchUpInside)
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let width = view.width
         let photoImageSize = width / 3.8
         profilePhotoImageView.frame = CGRect(x: 5, y: 5, width: photoImageSize, height: photoImageSize).integral
         profilePhotoImageView.layer.cornerRadius = photoImageSize/2
@@ -191,10 +192,6 @@ class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
         return label
     }()
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     func configure(user : User , bioTextHeight : CGFloat) {
         //        profilePhotoImageView
         profilePhotoImageView.sd_setImage(with: user.thumbnailImage, completed: nil)
@@ -210,22 +207,22 @@ class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
         bioLabel.text = user.bio
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        //        profilePhotoImageView
-        profilePhotoImageView.sd_setImage(with: nil, completed: nil)
-        //        postsButton
-        postNumber.text = nil
-        //        followingButton
-        followingNumber.text = nil
-        //        followersButton
-        followersNumber.text = nil
-        //        nameLabel]
-        nameLabel.text = nil
-        //        bioLabel
-        bioLabel.text = nil
-    }
-    
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        //        profilePhotoImageView
+//        profilePhotoImageView.sd_setImage(with: nil, completed: nil)
+//        //        postsButton
+//        postNumber.text = nil
+//        //        followingButton
+//        followingNumber.text = nil
+//        //        followersButton
+//        followersNumber.text = nil
+//        //        nameLabel]
+//        nameLabel.text = nil
+//        //        bioLabel
+//        bioLabel.text = nil
+//    }
+//
     @objc func didTapPostsButton(){
         print("TAP Posts")
         delegate?.profileHeaderDidTapPostsButton(self)

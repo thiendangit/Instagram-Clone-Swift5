@@ -9,12 +9,11 @@
 import UIKit
 
 class FeedImageCollectionViewCell: UICollectionViewCell {
-    
-    
-    @IBOutlet weak var imgView: EEZoomableImageView!
+   
+    @IBOutlet weak var imgView: UIImageView!
     
     override func awakeFromNib() {
-           super.awakeFromNib()
+        super.awakeFromNib()
        }
        
        func configure(url: URL){

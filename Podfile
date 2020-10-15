@@ -22,6 +22,8 @@ target 'InstagramClone-Swift5' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'lottie-ios'
   pod 'FlexiblePageControl'
+  #XLPagerTabStrip
+  pod 'XLPagerTabStrip'
 
   post_install do |installer|
       installer.pods_project.build_configurations.each do |config|
