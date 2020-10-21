@@ -13,6 +13,7 @@ import XLPagerTabStrip
 protocol photoCollectionViewControllerDelegate {
     func didTapImage(_ model : UserModal)
     func scrollViewDidScroll(scrollView: UIScrollView, collectionView: UICollectionView)
+    func scrollViewDidInit(collectionView: UICollectionView)
 }
 
 class photoCollectionViewController : UIViewController, IndicatorInfoProvider {
@@ -34,7 +35,7 @@ class photoCollectionViewController : UIViewController, IndicatorInfoProvider {
     var image : UIImage = UIImage()
     var backgroundColor : UIColor?
     
-    init(image : UIImage, backgroundColor : UIColor) {
+    required init(image : UIImage, backgroundColor : UIColor) {
         super.init(nibName: nil, bundle: nil)
         self.image = image
     }
@@ -60,6 +61,7 @@ class photoCollectionViewController : UIViewController, IndicatorInfoProvider {
         collectionView.bounces = false
         collectionView.backgroundColor = .white
         collectionView.isScrollEnabled = false
+        collectionView.tag = 0
         collectionView.showsVerticalScrollIndicator = false
         guard let collectionViewCopy = collectionView else { return }
         view.addSubview(collectionViewCopy)
@@ -68,6 +70,7 @@ class photoCollectionViewController : UIViewController, IndicatorInfoProvider {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = CGRect(x: 0, y: 0, width: view.width, height:  view.height)
+        delegate?.scrollViewDidInit(collectionView: collectionView)
     }
     
     func config(model : [UserModal]){

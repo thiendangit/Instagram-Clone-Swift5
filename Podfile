@@ -24,7 +24,8 @@ target 'InstagramClone-Swift5' do
   pod 'FlexiblePageControl'
   #XLPagerTabStrip
   pod 'XLPagerTabStrip'
-
+  pod 'ParallaxHeader', '~> 3.0.0'
+  
   post_install do |installer|
       installer.pods_project.build_configurations.each do |config|
           config.build_settings.delete('CODE_SIGNING_ALLOWED')

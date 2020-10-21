@@ -14,6 +14,8 @@ protocol ProfileTabsHeaderDelegate {
     func profileTabsHeaderDidTapTaggedButtonTab(_ header : ProfileTabsHeaderViewController)
     func didTapImage(_ model: UserModal)
     func scrollViewDidScroll(scrollView: UIScrollView, collectionView: UICollectionView)
+    func scrollViewDidInit(collectionView: UICollectionView)
+    func onChangeTab(collectionView : UICollectionView)
 }
 
 class ProfileTabsHeaderViewController: ButtonBarPagerTabStripViewController {
@@ -27,7 +29,7 @@ class ProfileTabsHeaderViewController: ButtonBarPagerTabStripViewController {
     private var currentPage: Int!
     
     lazy var myPhotoVC : photoCollectionViewController = {
-        var vc = photoCollectionViewController(image : UIImage(systemName: "rectangle.split.3x3")!, backgroundColor : .white )
+        var vc = photoCollectionViewController(image : UIImage(systemName: "rectangle.split.3x3")!, backgroundColor : .white)
         vc.delegate = self
         return vc
     }()
@@ -86,6 +88,13 @@ class ProfileTabsHeaderViewController: ButtonBarPagerTabStripViewController {
             else {
                 newCell?.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
                 oldCell?.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            }
+            
+            //callback onchange Tab
+            if(self.currentIndex == 0){
+                self.delegateTab?.onChangeTab(collectionView: self.myPhotoVC.collectionView)
+            }else{
+                self.delegateTab?.onChangeTab(collectionView: self.prefPhotoVC.collectionView)
             }
         }
         
@@ -152,13 +161,17 @@ class ProfileTabsHeaderViewController: ButtonBarPagerTabStripViewController {
 }
 
 extension ProfileTabsHeaderViewController : photoCollectionViewControllerDelegate{
+    
+    func scrollViewDidInit(collectionView: UICollectionView) {
+        delegateTab?.scrollViewDidInit(collectionView: collectionView)
+    }
+    
     func didTapImage(_ model: UserModal) {
         print("tab Image profile Tab")
         delegateTab?.didTapImage(model)
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView, collectionView: UICollectionView) {
-        print("scroll Image")
         delegateTab?.scrollViewDidScroll(scrollView: scrollView, collectionView: collectionView)
     }
 }
