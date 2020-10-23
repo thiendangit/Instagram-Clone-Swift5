@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol nameProfileInfoHeaderCollectionReusableDelegate : AnyObject {
+protocol ProfileInfoHeaderCollectionReusableDelegate : AnyObject {
     func profileHeaderDidTapPostsButton(_ header : ProfileInfoHeaderViewController)
     func profileHeaderDidTapFollowersButton(_ header : ProfileInfoHeaderViewController)
     func profileHeaderDidTapFollwingButton(_ header : ProfileInfoHeaderViewController)
@@ -35,7 +35,7 @@ class ProfileInfoHeaderViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var delegate : nameProfileInfoHeaderCollectionReusableDelegate?
+    var delegate : ProfileInfoHeaderCollectionReusableDelegate?
     
     private func addSubview(){
         view.addSubview(profilePhotoImageView)
@@ -245,7 +245,6 @@ class ProfileInfoHeaderViewController: UIViewController {
         delegate?.profileHeaderDidTapFollwingButton(self)
     }
     @objc func didTapEditProfileButton(){
-        print("TAP EditProfile")
         delegate?.profileHeaderDidTapEditProfileButton(self)
     }
 }

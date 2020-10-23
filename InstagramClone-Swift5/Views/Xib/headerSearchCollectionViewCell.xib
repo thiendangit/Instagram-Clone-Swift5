@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerSearchCell" id="gTV-IL-0wX" customClass="headerSearchCollectionViewCell" customModule="Tibb_Instagram" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="138" height="30"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="138" height="30"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGB-HR-YON">
+                        <rect key="frame" x="5" y="2" width="128" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="cIR-eV-zto"/>
+                        </constraints>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                        <state key="normal" title="Button" image="square.and.arrow.up.fill" catalog="system">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="jGB-HR-YON" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="H5F-0e-tsT"/>
+                <constraint firstItem="jGB-HR-YON" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Ilg-1D-GII"/>
+                <constraint firstAttribute="bottom" secondItem="jGB-HR-YON" secondAttribute="bottom" constant="2" id="fJv-vj-ghj"/>
+                <constraint firstAttribute="trailing" secondItem="jGB-HR-YON" secondAttribute="trailing" constant="5" id="n8f-J2-5Ls"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="138" height="43"/>
+            <connections>
+                <outlet property="button" destination="jGB-HR-YON" id="9PZ-iv-IEp"/>
+            </connections>
+            <point key="canvasLocation" x="146.37681159420291" y="142.63392857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
+    </resources>
+</document>

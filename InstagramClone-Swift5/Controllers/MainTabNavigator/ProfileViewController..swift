@@ -42,6 +42,7 @@ class ProfileViewController: UIViewController {
         configure()
         tabView.delegateTab = self
         headerView.view.frame = CGRect(x: 0, y: 0, width: view.width, height: headerHeight)
+        headerView.delegate = self
         self.scrollView.backgroundColor  = UIColor.green
         self.scrollView.delegate = self
         self.scrollView.parallaxHeader.view = headerView.view // You can set the parallax header view from a nib.
@@ -103,7 +104,6 @@ class ProfileViewController: UIViewController {
         tabView.view.frame = newFrameTabView
         scrollView.contentSize = CGSize(width: newFrame.width, height: newFrame.height)
         scrollView.panGestureRecognizer.delaysTouchesBegan = true
-        
         self.scrollView.addSubview(tabView.view)
         
     }
@@ -121,7 +121,7 @@ class ProfileViewController: UIViewController {
     }
 }
 
-extension ProfileViewController : nameProfileInfoHeaderCollectionReusableDelegate{
+extension ProfileViewController : ProfileInfoHeaderCollectionReusableDelegate{
     func profileHeaderDidTapPostsButton(_ header: ProfileInfoHeaderViewController) {
         collectionView?.scrollToItem(at: IndexPath(row : 0 , section : 1), at: .top, animated: true)
     }
@@ -149,6 +149,7 @@ extension ProfileViewController : nameProfileInfoHeaderCollectionReusableDelegat
     }
     
     func profileHeaderDidTapEditProfileButton(_ header: ProfileInfoHeaderViewController) {
+        print("TAP EditProfile")
         let vc  = EditProfileViewController()
         vc.title = "Edit Profile"
         vc.navigationItem.largeTitleDisplayMode = .never

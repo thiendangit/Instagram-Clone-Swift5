@@ -77,7 +77,7 @@ class StoryCollectionViewCell: UICollectionViewCell {
         button.snp.makeConstraints({
             make in
             make.width.height.equalTo(imageViewWidth/3)
-            make.top.left.equalTo((imageViewWidth-imageViewWidth/3))
+            make.top.left.equalTo((imageViewWidth-imageViewWidth/3.2))
         })
         view.snp.updateConstraints { (make) -> Void in
             make.width.height.equalTo(imageViewWidth)

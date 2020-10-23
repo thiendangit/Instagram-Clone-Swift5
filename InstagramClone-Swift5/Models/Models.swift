@@ -98,3 +98,8 @@ struct ImagesModalForTabar {
     var title : String?
     var image : UIImage?
 }
+
+struct headerItemExploreModal {
+    let image : String?
+    let label : String
+}

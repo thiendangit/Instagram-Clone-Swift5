@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="headerSearchView" customModule="Tibb_Instagram" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="LkK-JU-4LG"/>
+                <outlet property="imageView" destination="Wfw-QA-bOn" id="mBD-Qa-Hof"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="379" height="31"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zcY-lC-BWI">
+                    <rect key="frame" x="38" y="0.0" width="298" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Tìm kiếm...">
+                            <attributes>
+                                <color key="NSColor" red="0.35996194948186533" green="0.35996194948186533" blue="0.35996194948186533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" metaFont="system" size="17"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="15" lineHeightMultiple="1" tighteningFactorForTruncation="0.5" headerLevel="10"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Wfw-QA-bOn">
+                    <rect key="frame" x="8" y="1" width="30" height="28"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="pZd-5t-iPo"/>
+                        <constraint firstAttribute="width" constant="25" id="tML-qH-z5j"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barcode.viewfinder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="80S-ca-uGj">
+                    <rect key="frame" x="343.5" y="1" width="27.5" height="28.5"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Wfw-QA-bOn" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="12h-fY-e6n"/>
+                <constraint firstItem="80S-ca-uGj" firstAttribute="width" secondItem="Wfw-QA-bOn" secondAttribute="width" multiplier="1.1" id="1dT-e7-kFv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="80S-ca-uGj" secondAttribute="trailing" constant="8" id="4YL-JQ-IVJ"/>
+                <constraint firstItem="Wfw-QA-bOn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="6Gg-Ng-hDt"/>
+                <constraint firstItem="zcY-lC-BWI" firstAttribute="height" secondItem="Wfw-QA-bOn" secondAttribute="height" id="ADR-ms-gBc"/>
+                <constraint firstItem="80S-ca-uGj" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="EYY-IW-t5R"/>
+                <constraint firstItem="Wfw-QA-bOn" firstAttribute="trailing" secondItem="zcY-lC-BWI" secondAttribute="leading" id="HbJ-Ui-weJ"/>
+                <constraint firstItem="80S-ca-uGj" firstAttribute="height" secondItem="Wfw-QA-bOn" secondAttribute="height" multiplier="1.03333" id="Pps-FZ-tAL"/>
+                <constraint firstItem="80S-ca-uGj" firstAttribute="leading" secondItem="zcY-lC-BWI" secondAttribute="trailing" id="S3u-Nb-SGs"/>
+                <constraint firstItem="Wfw-QA-bOn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bVw-NQ-fd3"/>
+                <constraint firstItem="zcY-lC-BWI" firstAttribute="leading" secondItem="Wfw-QA-bOn" secondAttribute="trailing" id="rma-cQ-iq3"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="80S-ca-uGj" secondAttribute="bottom" id="z4k-y1-kNf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="186.40000000000001" y="-1606.1469265367318"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="barcode.viewfinder" catalog="system" width="128" height="114"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+    </resources>
+</document>

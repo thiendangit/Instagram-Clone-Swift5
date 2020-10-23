@@ -35,7 +35,7 @@ class ProfileTabsHeaderViewController: ButtonBarPagerTabStripViewController {
     }()
     
     lazy var prefPhotoVC : photoCollectionViewController = {
-        var vc = photoCollectionViewController(image : UIImage(systemName: "tag")!, backgroundColor : .red)
+        var vc = photoCollectionViewController(image : UIImage(systemName: "person.crop.circle")!, backgroundColor : .red)
         vc.delegate = self
         return vc
     }()
@@ -124,40 +124,6 @@ class ProfileTabsHeaderViewController: ButtonBarPagerTabStripViewController {
             })
         }
     }
-    
-    
-    private func addTarget(){
-        gridButton.addTarget(self, action: #selector(didTapGriButtonTab), for: .touchUpInside)
-        taggedButton.addTarget(self, action: #selector(didTapTaggedButtonTab), for: .touchUpInside)
-    }
-    
-    private let gridButton : UIButton = {
-        let button = UIButton()
-        button.clipsToBounds = true
-        button.tintColor = .systemBlue
-        button.setBackgroundImage(UIImage(systemName: "rectangle.split.3x3"), for: .normal)
-        return button
-    }()
-    
-    private let taggedButton : UIButton = {
-        let button = UIButton()
-        button.clipsToBounds = true
-        button.tintColor = .gray
-        button.setBackgroundImage(UIImage(systemName: "tag"), for: .normal)
-        return button
-    }()
-    
-    @objc func didTapGriButtonTab(){
-        gridButton.tintColor = .systemBlue
-        taggedButton.tintColor = .gray
-        delegateTab?.profileTabsHeaderDidTapGriButtonTab(self)
-    }
-    @objc  func didTapTaggedButtonTab(){
-        gridButton.tintColor = .gray
-        taggedButton.tintColor = .systemBlue
-        delegateTab?.profileTabsHeaderDidTapTaggedButtonTab(self)
-    }
-    
 }
 
 extension ProfileTabsHeaderViewController : photoCollectionViewControllerDelegate{
