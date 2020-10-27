@@ -12,7 +12,7 @@ import XLPagerTabStrip
 protocol ProfileTabsHeaderDelegate {
     func profileTabsHeaderDidTapGriButtonTab(_ header : ProfileTabsHeaderViewController)
     func profileTabsHeaderDidTapTaggedButtonTab(_ header : ProfileTabsHeaderViewController)
-    func didTapImage(_ model: UserModal)
+    func didTapImage(_ model: UserPostModel)
     func scrollViewDidScroll(scrollView: UIScrollView, collectionView: UICollectionView)
     func scrollViewDidInit(collectionView: UICollectionView)
     func onChangeTab(collectionView : UICollectionView)
@@ -23,8 +23,8 @@ class ProfileTabsHeaderViewController: ButtonBarPagerTabStripViewController {
     static let identifier = "ProfileTabsHeaderView"
     let heightHeaderTabbar : CGFloat = 60
     var delegateTab : ProfileTabsHeaderDelegate?
-    var myPost : [UserModal]?
-    var prefPost : [UserModal]?
+    var myPost : [UserPostModel]?
+    var prefPost : [UserPostModel]?
     
     private var currentPage: Int!
     
@@ -45,7 +45,7 @@ class ProfileTabsHeaderViewController: ButtonBarPagerTabStripViewController {
         
     }
     
-    func configure(myPost : [UserModal], prefPost : [UserModal] , buttonBarHeight : CGFloat) {
+    func configure(myPost : [UserPostModel], prefPost : [UserPostModel] , buttonBarHeight : CGFloat) {
         settings.style.buttonBarHeight = buttonBarHeight
         self.myPost = myPost
         self.prefPost = prefPost
@@ -132,7 +132,7 @@ extension ProfileTabsHeaderViewController : photoCollectionViewControllerDelegat
         delegateTab?.scrollViewDidInit(collectionView: collectionView)
     }
     
-    func didTapImage(_ model: UserModal) {
+    func didTapImage(_ model: UserPostModel) {
         print("tab Image profile Tab")
         delegateTab?.didTapImage(model)
     }

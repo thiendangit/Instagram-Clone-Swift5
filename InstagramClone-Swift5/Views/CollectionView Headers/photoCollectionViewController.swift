@@ -11,7 +11,7 @@ import UIKit
 import XLPagerTabStrip
 
 protocol photoCollectionViewControllerDelegate {
-    func didTapImage(_ model : UserModal)
+    func didTapImage(_ model : UserPostModel)
     func scrollViewDidScroll(scrollView: UIScrollView, collectionView: UICollectionView)
     func scrollViewDidInit(collectionView: UICollectionView)
 }
@@ -19,7 +19,7 @@ protocol photoCollectionViewControllerDelegate {
 class photoCollectionViewController : UIViewController, IndicatorInfoProvider {
     static let itemSize = UIScreen.main.bounds.width/3
     static let footerHeight = CGFloat(70.0)
-    var model : [UserModal]?
+    var model : [UserPostModel]?
     var delegate : photoCollectionViewControllerDelegate?
     var collectionView : UICollectionView!{
         didSet{
@@ -73,7 +73,7 @@ class photoCollectionViewController : UIViewController, IndicatorInfoProvider {
         delegate?.scrollViewDidInit(collectionView: collectionView)
     }
     
-    func config(model : [UserModal]){
+    func config(model : [UserPostModel]){
         self.model = model
     }
     
@@ -114,7 +114,7 @@ extension photoCollectionViewController : UICollectionViewDelegate, UICollection
 }
 
 extension photoCollectionViewController : profileImageCollectionViewCellDelegate{
-    func didTapImage(_ model: UserModal) {
+    func didTapImage(_ model: UserPostModel) {
         delegate?.didTapImage(model)
     }
 }

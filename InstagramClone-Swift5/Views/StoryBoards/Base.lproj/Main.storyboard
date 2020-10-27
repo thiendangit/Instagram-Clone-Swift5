@@ -520,11 +520,35 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9hb-0u-9pm">
+                                <rect key="frame" x="0.0" y="128" width="414" height="559"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yLv-Fp-yMP">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wKk-BP-dlt">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="oXG-LI-yge">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="9hb-0u-9pm" firstAttribute="leading" secondItem="T22-oA-0PH" secondAttribute="leading" id="2QJ-DF-2nE"/>
                             <constraint firstItem="OuS-Zt-M4n" firstAttribute="leading" secondItem="T22-oA-0PH" secondAttribute="leading" id="40w-qX-acd"/>
                             <constraint firstItem="OuS-Zt-M4n" firstAttribute="top" secondItem="eyK-Up-pJI" secondAttribute="bottom" id="DHo-Qg-dmi"/>
+                            <constraint firstItem="9hb-0u-9pm" firstAttribute="bottom" secondItem="T22-oA-0PH" secondAttribute="bottom" id="Lq7-Tt-aAY"/>
+                            <constraint firstItem="9hb-0u-9pm" firstAttribute="top" secondItem="OuS-Zt-M4n" secondAttribute="bottom" id="Sod-0Q-ASU"/>
+                            <constraint firstItem="9hb-0u-9pm" firstAttribute="trailing" secondItem="T22-oA-0PH" secondAttribute="trailing" id="WfM-El-C3j"/>
                             <constraint firstItem="eyK-Up-pJI" firstAttribute="trailing" secondItem="T22-oA-0PH" secondAttribute="trailing" id="i5I-Q2-mWG"/>
                             <constraint firstItem="eyK-Up-pJI" firstAttribute="leading" secondItem="T22-oA-0PH" secondAttribute="leading" id="mue-BI-Fdx"/>
                             <constraint firstItem="eyK-Up-pJI" firstAttribute="top" secondItem="T22-oA-0PH" secondAttribute="top" id="wIp-F0-m3g"/>
@@ -535,6 +559,7 @@
                     <navigationItem key="navigationItem" id="Pun-D9-wOQ"/>
                     <connections>
                         <outlet property="collectionViewHeader" destination="OuS-Zt-M4n" id="xOE-Xi-3ff"/>
+                        <outlet property="collectionViewImage" destination="9hb-0u-9pm" id="A2k-4F-uWG"/>
                         <outlet property="headerSearchView" destination="eyK-Up-pJI" id="Lge-1I-8HQ"/>
                     </connections>
                 </viewController>

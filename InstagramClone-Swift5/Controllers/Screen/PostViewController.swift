@@ -10,7 +10,7 @@ import UIKit
 
 enum PostRenderType{
     case header(provider : User)
-    case primaryContent(provider : UserModal)
+    case primaryContent(provider : UserPostModel)
     case actions(provider : String)
     case comments(provider : [PostComment])
 }
@@ -21,11 +21,11 @@ public struct PostRenderViewModel {
 
 class PostViewController: UIViewController {
     
-    private var model : UserModal?
+    private var model : UserPostModel?
     
     private var renderModel = [PostRenderViewModel]()
     
-    init(model : UserModal?) {
+    init(model : UserPostModel?) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
     }

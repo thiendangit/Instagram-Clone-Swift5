@@ -9,12 +9,12 @@
 import UIKit
 
 protocol profileImageCollectionViewCellDelegate {
-    func didTapImage(_ model : UserModal)
+    func didTapImage(_ model : UserPostModel)
 }
 
 class profileImageCollectionViewCell: UICollectionViewCell {
     static let identifier  = "profileImageCollectionViewCell"
-    var model : UserModal?
+    var model : UserPostModel?
     var delegate : profileImageCollectionViewCellDelegate?
     
     private let profileImageView : UIImageView = {
@@ -46,7 +46,7 @@ class profileImageCollectionViewCell: UICollectionViewCell {
         delegate?.didTapImage(model)
     }
     
-    func configure(model : UserModal) {
+    func configure(model : UserPostModel) {
         self.model = model
 //        print("images \(model.thumbnailImage[0])")
         profileImageView.sd_setImage(with: model.thumbnailImage[0], completed: nil)

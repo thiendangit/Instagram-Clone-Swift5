@@ -11,6 +11,9 @@
 		0E0A356E252EC9BB0036871C /* EEZoomableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0A356D252EC9BB0036871C /* EEZoomableImageView.swift */; };
 		0E0A3571252F2E1E0036871C /* heart.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E0A3570252F2E1E0036871C /* heart.json */; };
 		0E133FB925370AF700B42D29 /* footerCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E133FB825370AF700B42D29 /* footerCollectionReusableView.swift */; };
+		0E186CB2254678140080D946 /* imageSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E186CB0254678140080D946 /* imageSearchCollectionViewCell.swift */; };
+		0E186CB3254678140080D946 /* imageSearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E186CB1254678140080D946 /* imageSearchCollectionViewCell.xib */; };
+		0E186CB52547C11E0080D946 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E186CB42547C11E0080D946 /* PlayerView.swift */; };
 		0E2F2D4B25418463006D0E8E /* headerSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E2F2D4A25418463006D0E8E /* headerSearchView.xib */; };
 		0E2F2D4D25418613006D0E8E /* headerSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F2D4C25418613006D0E8E /* headerSearchView.swift */; };
 		0E2F2D502542890C006D0E8E /* headerSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F2D4E2542890C006D0E8E /* headerSearchCollectionViewCell.swift */; };
@@ -63,6 +66,9 @@
 		0E0A356D252EC9BB0036871C /* EEZoomableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EEZoomableImageView.swift; sourceTree = "<group>"; };
 		0E0A3570252F2E1E0036871C /* heart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heart.json; sourceTree = "<group>"; };
 		0E133FB825370AF700B42D29 /* footerCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = footerCollectionReusableView.swift; sourceTree = "<group>"; };
+		0E186CB0254678140080D946 /* imageSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		0E186CB1254678140080D946 /* imageSearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = imageSearchCollectionViewCell.xib; sourceTree = "<group>"; };
+		0E186CB42547C11E0080D946 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		0E2F2D4A25418463006D0E8E /* headerSearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = headerSearchView.xib; sourceTree = "<group>"; };
 		0E2F2D4C25418613006D0E8E /* headerSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerSearchView.swift; sourceTree = "<group>"; };
 		0E2F2D4E2542890C006D0E8E /* headerSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerSearchCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -160,6 +166,9 @@
 				0E2F2D4C25418613006D0E8E /* headerSearchView.swift */,
 				0E2F2D4E2542890C006D0E8E /* headerSearchCollectionViewCell.swift */,
 				0E2F2D4F2542890C006D0E8E /* headerSearchCollectionViewCell.xib */,
+				0E186CB0254678140080D946 /* imageSearchCollectionViewCell.swift */,
+				0E186CB1254678140080D946 /* imageSearchCollectionViewCell.xib */,
+				0E186CB42547C11E0080D946 /* PlayerView.swift */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -435,6 +444,7 @@
 				0E2F2D4B25418463006D0E8E /* headerSearchView.xib in Resources */,
 				0E0A3571252F2E1E0036871C /* heart.json in Resources */,
 				0E3522DB251AFE9500C4FAD4 /* Main.storyboard in Resources */,
+				0E186CB3254678140080D946 /* imageSearchCollectionViewCell.xib in Resources */,
 				0E2F2D512542890C006D0E8E /* headerSearchCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +524,7 @@
 				0E3522F6251B08E400C4FAD4 /* LoginViewController.swift in Sources */,
 				0E0A356E252EC9BB0036871C /* EEZoomableImageView.swift in Sources */,
 				0E2F2D502542890C006D0E8E /* headerSearchCollectionViewCell.swift in Sources */,
+				0E186CB2254678140080D946 /* imageSearchCollectionViewCell.swift in Sources */,
 				0E352304251B09FB00C4FAD4 /* SearchResultViewController.swift in Sources */,
 				0E352302251B09EF00C4FAD4 /* SearchViewController.swift in Sources */,
 				0E2F2D4D25418613006D0E8E /* headerSearchView.swift in Sources */,
@@ -528,6 +539,7 @@
 				0ECBA27A253444BE004EFC38 /* config.swift in Sources */,
 				0E3522FC251B097500C4FAD4 /* EditProfileViewController.swift in Sources */,
 				0E3522ED251B06A100C4FAD4 /* ExploreViewController..swift in Sources */,
+				0E186CB52547C11E0080D946 /* PlayerView.swift in Sources */,
 				0ECBA27F25356396004EFC38 /* photoCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

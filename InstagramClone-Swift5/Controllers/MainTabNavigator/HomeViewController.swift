@@ -78,7 +78,7 @@ class HomeViewController: UIViewController {
                         PostLike(username: "thien dang", postIdentifier: "1233123"),
                         PostLike(username: "thien dang", postIdentifier: "1233123")]
         
-        let post = UserModal(postType: .photo, thumbnailImage: [
+        let post = UserPostModel(postType: .photo, thumbnailImage: [
             URL(string:"https://i.guim.co.uk/img/media/03caad21d019a429e66df852c31d57872b79ceb9/0_14_2603_1562/master/2603.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=1de70e809602b3bc061b0536caa8c517")!,
             URL(string: "https://media-cdn.tripadvisor.com/media/photo-s/09/d6/c2/ca/blue-wahle-mirissa.jpg")!,
             URL(string: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSfpLg2Rk6GE9xxK9VrExfap-dW5uy8EX-GSA&usqp=CAU")!

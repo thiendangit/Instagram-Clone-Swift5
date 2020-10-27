@@ -34,7 +34,7 @@ struct UserCount {
     let posts : Int
 }
 
-public struct UserModal {
+public struct UserPostModel {
     let postType : UserPostType
     let thumbnailImage : [URL]
     let postURL : URL
@@ -46,6 +46,7 @@ public struct UserModal {
     let owner : User
     var bookmarked : Bool
     var liked : Bool
+    var videoURL : String?
 }
 
 struct PostLike {
@@ -67,7 +68,7 @@ struct PostComment {
 }
 
 public struct Post {
-    var postDetails : UserModal
+    var postDetails : UserPostModel
     var comments: [PostComment]
 }
 
@@ -90,7 +91,7 @@ public struct UserNotification {
 }
 
 enum UserNotificationType {
-    case like(post: UserModal)
+    case like(post: UserPostModel)
     case follow(state : FollowState)
 }
 
