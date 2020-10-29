@@ -14,6 +14,9 @@ import AVFoundation
 class ExploreViewController: UIViewController {
     var headerSearchCollectionDataSource : [headerItemExploreModal] = [headerItemExploreModal]()
     var imageSearchCollectionDataSource : [UserPostModel] = [UserPostModel]()
+    var headerSearchHeightConstraint:NSLayoutConstraint!
+    let headerSearchHeight : CGFloat = 34
+    private var lastContentOffset: CGFloat = 0
     @IBOutlet weak var headerSearchView: headerSearchView!
     @IBOutlet weak var collectionViewHeader: UICollectionView!{
         didSet{
@@ -21,6 +24,8 @@ class ExploreViewController: UIViewController {
             collectionViewHeader.dataSource = self
         }
     }
+    
+    var previousCells : imageSearchCollectionViewCell? = nil
     
     @IBOutlet weak var collectionViewImage: UICollectionView!{
         didSet{
@@ -128,7 +133,11 @@ class ExploreViewController: UIViewController {
             }else if (x == 9 || x == 27){
                 imageSearchCollectionDataSource.append(post1)
             }else{
-                imageSearchCollectionDataSource.append(post2)
+                if(x%2 == 0){
+                    imageSearchCollectionDataSource.append(post2)
+                }else{
+                    imageSearchCollectionDataSource.append(post1)
+                }
             }
         }
     }
@@ -146,6 +155,9 @@ class ExploreViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         headerSearchView.configure()
+        headerSearchView.translatesAutoresizingMaskIntoConstraints = false
+        headerSearchHeightConstraint = headerSearchView.heightAnchor.constraint(equalToConstant: 34)
+        headerSearchHeightConstraint.isActive = true
     }
     
 }
@@ -166,35 +178,51 @@ extension ExploreViewController : UICollectionViewDelegate,UICollectionViewDataS
             return cell
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imageSearchCollectionViewCell.identifier , for: indexPath) as! imageSearchCollectionViewCell
-            cell.configure(model: imageSearchCollectionDataSource[indexPath.row])
+            var isShowImageCover = true
+            if(cell.frame.width > view.width/2){
+                isShowImageCover = false
+            }
+            cell.configure(model: imageSearchCollectionDataSource[indexPath.row], isShowImageCover : isShowImageCover, imageCoverSize: cell.frame.width/5)
             return cell
         }
     }
-   
+    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if(collectionView == self.collectionViewImage){
             let visibleCells = collectionView.visibleCells;
+            var cells : [imageSearchCollectionViewCell] = [imageSearchCollectionViewCell]()
             for visibleCell in visibleCells {
+                // get cell large for playvideo
                 if(visibleCell.frame.size.width > view.width/2){
-                    print("visibleCell : \(visibleCell)")
                     let visibleCell_temp = visibleCell as! imageSearchCollectionViewCell
-                    visibleCell_temp.playerView.player?.play()
+                    cells.append(visibleCell_temp)
+                }
+            }
+            if(cells.count > 0){
+                for cell in cells {
+                    // play video for first load
+                    if(collectionView.contentOffset.y < 30){
+                        previousCells?.playerView.player?.pause()
+                        let cell = collectionView.cellForItem(at: IndexPath(row: 2, section: 0)) as! imageSearchCollectionViewCell
+                        // cell.playerView.player?.play()
+                        previousCells = cell
+                    }else{
+                        //play video for end load
+                        if(cell.frame.minY + cell.frame.height*2 + 20 >= collectionView.contentSize.height && cells.count >= 2){
+                            previousCells?.playerView.player?.pause()
+                            // cells[1].playerView.player?.play()
+                            previousCells = cells[1]
+                        }else{
+                            //next video
+                            previousCells?.playerView.player?.pause()
+                            //                            cells[0].playerView.player?.play()
+                            previousCells = cells[0]
+                        }
+                    }
                 }
             }
         }
     }
-    
-        func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-            let visibleCells = collectionView.visibleCells;
-            for visibleCell in visibleCells {
-                if(visibleCell.frame.size.width > view.width/2){
-                    print("visibleCell : \(visibleCell)")
-                    let visibleCell_temp = visibleCell as! imageSearchCollectionViewCell
-                    visibleCell_temp.playerView.player?.pause();
-//                    visibleCell_temp.playerView.player = nil;
-                }
-            }
-        }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if(collectionView == self.collectionViewHeader){
@@ -212,11 +240,49 @@ extension ExploreViewController : UICollectionViewDelegate,UICollectionViewDataS
         return 10
     }
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView){
-        collectionViewImage.visibleCells.forEach { cell in
-            // TODO: write logic to start the video after it ends scrolling
-            print("cell \(cell)")
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y;
+        if (self.lastContentOffset < scrollView.contentOffset.y) {
+             // move down
+            if offsetY > 0 {
+                let transformHeader = CATransform3DTranslate(CATransform3DIdentity, 0, -offsetY*3, 0)
+                let transform = CATransform3DTranslate(CATransform3DIdentity, 0, -offsetY, 0)
+                let transform34 = CATransform3DTranslate(CATransform3DIdentity, 0, -34, 0)
+                headerSearchView.layer.transform = transformHeader
+                collectionViewHeader.layer.transform = offsetY > 34 ? transform34 : transform
+                collectionViewImage.layer.transform = offsetY > 34 ? transform34 : transform
+            }
+        }else{
+        // move up
+            headerSearchView.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 0, 0)
+            collectionViewHeader.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 0, 0)
+            collectionViewImage.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 5, 0)
         }
+        self.lastContentOffset = offsetY
+    }
+    
+    private func animateHeader() {
+        self.headerSearchHeightConstraint.constant = 34
+        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [.curveEaseInOut], animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+        if self.headerSearchHeightConstraint.constant == 34 {
+            animateHeader()
+        }
+        
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        if self.headerSearchHeightConstraint.constant == 34 {
+            animateHeader()
+        }
+        
     }
 }
 

@@ -15,6 +15,7 @@ class imageSearchCollectionViewCell: UICollectionViewCell {
     static let identifier = "imageSearchCell"
     var model : UserPostModel?
     @IBOutlet weak var playerView: PlayerView!
+    var imageCoverContaints: Constraint? = nil
     
     let imageView : UIImageView = {
         let iv = UIImageView()
@@ -22,26 +23,46 @@ class imageSearchCollectionViewCell: UICollectionViewCell {
         return iv
     }()
     
+    let imageCoverView : UIImageView = {
+        let iv = UIImageView()
+        iv.tintColor = .white
+        return iv
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         contentView.backgroundColor = .white
+        self.contentView.addSubview(imageView)
+        self.contentView.addSubview(imageCoverView)
     }
     
-    func configure(model : UserPostModel!){
+    func configureImage(imageName : String , imageCoverSize : CGFloat){
+        imageCoverView.image = UIImage(systemName: imageName)
+        imageCoverView.snp.makeConstraints { (make) -> Void in
+            make.width.height.equalTo(imageCoverSize)
+            make.top.equalTo(5)
+            make.right.equalTo(-5)
+        }
+    }
+    
+    func configure(model : UserPostModel!, isShowImageCover : Bool, imageCoverSize : CGFloat){
         guard let model = model else {
             return
         }
         contentView.removeConstraints(contentView.constraints)
         self.model = model
-        switch self.model?.postType {
+        switch model.postType {
         case .photo:
-            self.contentView.addSubview(imageView)
             imageView.sd_setImage(with: model.thumbnailImage.first, completed: nil)
             imageView.snp.makeConstraints { (make) -> Void in
                 make.width.height.equalTo(self.contentView)
                 make.center.equalTo(self.contentView)
             }
+            if(isShowImageCover == true){
+                configureImage(imageName : "aspectratio.fill", imageCoverSize: imageCoverSize)
+            }
+            break
         case .video:
             playerView.frame = bounds
             let url = NSURL(string: model.videoURL!);
@@ -52,21 +73,16 @@ class imageSearchCollectionViewCell: UICollectionViewCell {
                 make.width.height.equalTo(self.contentView)
                 make.center.equalTo(self.contentView)
             }
-        default :
-            return
+            if(isShowImageCover == true){
+                 configureImage(imageName : "play.fill", imageCoverSize: imageCoverSize)
+            }
         }
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        switch self.model?.postType {
-        case .photo:
             imageView.sd_setImage(with: nil, completed: nil)
-        case .video:
-            self.playerView.player?.pause();
-            return
-        default :
-            return
+            imageCoverView.image = nil
+            self.playerView?.playerLayer.player?.pause()
         }
-    }
 }
