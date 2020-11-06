@@ -11,12 +11,16 @@ import AVKit;
 import AVFoundation;
 import SnapKit
 
+protocol imageSearchCollectionViewCellDelegate {
+    func didTapImage(_ model : UserPostModel)
+}
+
 class imageSearchCollectionViewCell: UICollectionViewCell {
     static let identifier = "imageSearchCell"
     var model : UserPostModel?
     @IBOutlet weak var playerView: PlayerView!
     var imageCoverContaints: Constraint? = nil
-    
+    var delegate : imageSearchCollectionViewCellDelegate?
     let imageView : UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = .cyan
@@ -35,6 +39,13 @@ class imageSearchCollectionViewCell: UICollectionViewCell {
         contentView.backgroundColor = .white
         self.contentView.addSubview(imageView)
         self.contentView.addSubview(imageCoverView)
+        imageView.isUserInteractionEnabled = true
+        let imageTap = UITapGestureRecognizer(target: self, action: #selector(handleDidTapImage))
+        imageView.addGestureRecognizer(imageTap)
+    }
+    
+    @objc func handleDidTapImage() {
+        delegate?.didTapImage(model!)
     }
     
     func configureImage(imageName : String , imageCoverSize : CGFloat){
@@ -65,6 +76,9 @@ class imageSearchCollectionViewCell: UICollectionViewCell {
             break
         case .video:
             playerView.frame = bounds
+            playerView.isUserInteractionEnabled = true
+            let playerTap = UITapGestureRecognizer(target: self, action: #selector(handleDidTapImage))
+            playerView.addGestureRecognizer(playerTap)
             let url = NSURL(string: model.videoURL!);
             let avPlayer = AVPlayer(url: url! as URL);
             self.playerView?.playerLayer.player = avPlayer;
@@ -74,15 +88,15 @@ class imageSearchCollectionViewCell: UICollectionViewCell {
                 make.center.equalTo(self.contentView)
             }
             if(isShowImageCover == true){
-                 configureImage(imageName : "play.fill", imageCoverSize: imageCoverSize)
+                configureImage(imageName : "play.fill", imageCoverSize: imageCoverSize)
             }
         }
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-            imageView.sd_setImage(with: nil, completed: nil)
-            imageCoverView.image = nil
-            self.playerView?.playerLayer.player?.pause()
-        }
+        imageView.sd_setImage(with: nil, completed: nil)
+        imageCoverView.image = nil
+        self.playerView?.playerLayer.player?.pause()
+    }
 }

@@ -182,6 +182,7 @@ extension ExploreViewController : UICollectionViewDelegate,UICollectionViewDataS
             if(cell.frame.width > view.width/2){
                 isShowImageCover = false
             }
+            cell.delegate = self
             cell.configure(model: imageSearchCollectionDataSource[indexPath.row], isShowImageCover : isShowImageCover, imageCoverSize: cell.frame.width/5)
             return cell
         }
@@ -201,22 +202,22 @@ extension ExploreViewController : UICollectionViewDelegate,UICollectionViewDataS
             if(cells.count > 0){
                 for cell in cells {
                     // play video for first load
-                    if(collectionView.contentOffset.y < 30){
-                        previousCells?.playerView.player?.pause()
-                        let cell = collectionView.cellForItem(at: IndexPath(row: 2, section: 0)) as! imageSearchCollectionViewCell
-                        // cell.playerView.player?.play()
-                        previousCells = cell
+                    if(collectionView.contentOffset.y < headerSearchHeight){
+//                        previousCells?.playerView.player?.pause()
+//                        let cell = collectionView.cellForItem(at: IndexPath(row: 2, section: 0)) as! imageSearchCollectionViewCell
+//                        cell.playerView.player?.play()
+//                        previousCells = cell
                     }else{
                         //play video for end load
                         if(cell.frame.minY + cell.frame.height*2 + 20 >= collectionView.contentSize.height && cells.count >= 2){
-                            previousCells?.playerView.player?.pause()
-                            // cells[1].playerView.player?.play()
-                            previousCells = cells[1]
+//                            previousCells?.playerView.player?.pause()
+//                            cells[1].playerView.player?.play()
+//                            previousCells = cells[1]
                         }else{
                             //next video
-                            previousCells?.playerView.player?.pause()
-                            //                            cells[0].playerView.player?.play()
-                            previousCells = cells[0]
+//                            previousCells?.playerView.player?.pause()
+//                            cells[0].playerView.player?.play()
+//                            previousCells = cells[0]
                         }
                     }
                 }
@@ -243,46 +244,34 @@ extension ExploreViewController : UICollectionViewDelegate,UICollectionViewDataS
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y;
         if (self.lastContentOffset < scrollView.contentOffset.y) {
-             // move down
+            // move down
             if offsetY > 0 {
                 let transformHeader = CATransform3DTranslate(CATransform3DIdentity, 0, -offsetY*3, 0)
                 let transform = CATransform3DTranslate(CATransform3DIdentity, 0, -offsetY, 0)
-                let transform34 = CATransform3DTranslate(CATransform3DIdentity, 0, -34, 0)
+                let transform34 = CATransform3DTranslate(CATransform3DIdentity, 0, -headerSearchHeight, 0)
                 headerSearchView.layer.transform = transformHeader
-                collectionViewHeader.layer.transform = offsetY > 34 ? transform34 : transform
-                collectionViewImage.layer.transform = offsetY > 34 ? transform34 : transform
+                collectionViewHeader.layer.transform = offsetY > headerSearchHeight ? transform34 : transform
+                collectionViewImage.layer.transform = offsetY > headerSearchHeight ? transform34 : transform
             }
         }else{
-        // move up
+            // move up
             headerSearchView.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 0, 0)
             collectionViewHeader.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 0, 0)
             collectionViewImage.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 0, 5, 0)
         }
         self.lastContentOffset = offsetY
     }
-    
-    private func animateHeader() {
-        self.headerSearchHeightConstraint.constant = 34
-        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [.curveEaseInOut], animations: {
-            self.view.layoutIfNeeded()
-        }, completion: nil)
-        
-    }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
-        if self.headerSearchHeightConstraint.constant == 34 {
-            animateHeader()
-        }
-        
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        
-        if self.headerSearchHeightConstraint.constant == 34 {
-            animateHeader()
-        }
-        
-    }
 }
 
+extension ExploreViewController : imageSearchCollectionViewCellDelegate{
+    func didTapImage(_ model: UserPostModel) {
+        print("tap")
+        //        let vcPost = PostViewController(data: [UserFollowRelationShip(usename: "test", name: "test", type: .following, avatar: URL(string: "https://miro.medium.com/max/10000/0*wZAcNrIWFFjuJA78")!)])
+        //        vcPost.modalPresentationStyle = .fullScreen
+        //        navigationController?.pushViewController(vcPost, animated: true)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "PostViewController") as! PostViewController
+        newViewController.initConfigure(model)
+        self.present(newViewController, animated: true, completion: nil)
+    }
+}

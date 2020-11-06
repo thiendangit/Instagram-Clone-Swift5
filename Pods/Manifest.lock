@@ -97,12 +97,17 @@ PODS:
   - nanopb/encode (1.30906.0)
   - ParallaxHeader (3.0.0)
   - PromisesObjC (1.2.10)
+  - PryntTrimmerView (4.0.2)
   - ReadMoreTextView (3.0.1)
   - SDWebImage (5.9.0):
     - SDWebImage/Core (= 5.9.0)
   - SDWebImage/Core (5.9.0)
   - SnapKit (5.0.1)
+  - SteviaLayout (4.7.3)
   - XLPagerTabStrip (9.0.0)
+  - YPImagePicker (4.4.0):
+    - PryntTrimmerView (~> 4.0.2)
+    - SteviaLayout (~> 4.7.3)
 
 DEPENDENCIES:
   - Appirater
@@ -119,6 +124,7 @@ DEPENDENCIES:
   - SDWebImage
   - SnapKit (~> 5.0.0)
   - XLPagerTabStrip
+  - YPImagePicker
 
 SPEC REPOS:
   trunk:
@@ -142,10 +148,13 @@ SPEC REPOS:
     - nanopb
     - ParallaxHeader
     - PromisesObjC
+    - PryntTrimmerView
     - ReadMoreTextView
     - SDWebImage
     - SnapKit
+    - SteviaLayout
     - XLPagerTabStrip
+    - YPImagePicker
 
 SPEC CHECKSUMS:
   Appirater: 44a4651f7912a17dc906b655f0c215d5bb768b84
@@ -168,11 +177,14 @@ SPEC CHECKSUMS:
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   ParallaxHeader: a343f55eb38f52a89c5820a77e14cf975b84e6aa
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
+  PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
   ReadMoreTextView: 19147adf93abce6d7271e14031a00303fe28720d
   SDWebImage: 62ae4a18473520c67b79e9724c31a63599cc9423
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
+  YPImagePicker: 15aed8bcaa4dad976e11b6114126d731a2f9f3c9
 
-PODFILE CHECKSUM: a82e971eea8a0cbef1d75e1eff715142fd307325
+PODFILE CHECKSUM: ec091230144ae6f3e316d7c7005f74a9f9a171e2
 
 COCOAPODS: 1.9.3

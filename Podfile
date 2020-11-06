@@ -25,6 +25,7 @@ target 'InstagramClone-Swift5' do
   #XLPagerTabStrip
   pod 'XLPagerTabStrip'
   pod 'ParallaxHeader', '~> 3.0.0'
+  pod 'YPImagePicker'
   
   post_install do |installer|
       installer.pods_project.build_configurations.each do |config|

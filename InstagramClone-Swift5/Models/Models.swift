@@ -28,6 +28,18 @@ public struct User {
     let thumbnailImage : URL
 }
 
+public struct SuggestionFriend {
+    let username : String
+    let bio : String
+    let counts : UserCount
+    let name : (first : String , last : String)
+    let birthday : Date
+    let gender : Gender
+    let joinDate : Date
+    let thumbnailImage : URL
+    let relation : (FollowState)
+}
+
 struct UserCount {
     let followers : Int
     let following : Int
@@ -87,12 +99,13 @@ public struct UserFollowRelationShip {
 public struct UserNotification {
     let type : UserNotificationType
     let text : String
-    let user : User
+    let user : [SuggestionFriend]
 }
 
 enum UserNotificationType {
     case like(post: UserPostModel)
     case follow(state : FollowState)
+    case suggestFollow(suggestionFriendList : [SuggestionFriend])
 }
 
 struct ImagesModalForTabar {

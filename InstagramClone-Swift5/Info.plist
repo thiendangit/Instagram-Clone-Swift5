@@ -45,6 +45,12 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+    <key>NSCameraUsageDescription</key>
+    <string>yourWording</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>yourWording</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>yourWording</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

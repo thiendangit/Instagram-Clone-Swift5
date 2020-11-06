@@ -174,7 +174,10 @@ extension ProfileViewController : ProfileTabsHeaderDelegate, UIScrollViewDelegat
     }
     
     func didTapImage(_ model: UserPostModel) {
-        print("tab Image")
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "PostViewController") as! PostViewController
+        newViewController.initConfigure(model)
+        self.present(newViewController, animated: true, completion: nil)
     }
     
     //scrollView child

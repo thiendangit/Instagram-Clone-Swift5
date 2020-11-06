@@ -67,7 +67,7 @@ class SettingViewController : UIViewController {
         present(navVC,animated: true)
     }
     
-    func onPressInviteFriend() {
+    func onPressInviteFriend() { 
         
     }
     

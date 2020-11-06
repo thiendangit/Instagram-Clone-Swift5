@@ -7,134 +7,202 @@
 //
 
 import UIKit
-
-enum PostRenderType{
-    case header(provider : User)
-    case primaryContent(provider : UserPostModel)
-    case actions(provider : String)
-    case comments(provider : [PostComment])
-}
-
-public struct PostRenderViewModel {
-    let renderType : PostRenderType
-}
+import FirebaseAuth
+import ReadMoreTextView
 
 class PostViewController: UIViewController {
     
-    private var model : UserPostModel?
+    var feedRenderModels = [Post]()
     
-    private var renderModel = [PostRenderViewModel]()
+    var storyRenderModels = [User]()
     
-    init(model : UserPostModel?) {
-        self.model = model
-        super.init(nibName: nil, bundle: nil)
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.estimatedRowHeight = 100
+            tableView.rowHeight = UITableView.automaticDimension
+        }
     }
     
-    let tableView : UITableView = {
-        let tableView = UITableView()
-        return tableView
-    }()
+    var expandedCells = Set<Int>()
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    @objc func didTapLeftButton(){
+        print("didTapLeftButton")
     }
     
-    private func configure(){
-        guard let model = model else {
-            return
-        }
-        // case .header(_):
-        renderModel.append(PostRenderViewModel(renderType: .header(provider: model.owner)))
-        //case .comments(_):
-        var comments : [PostComment] = model.comments
-        for i in 0..<4 {
-            comments.append(PostComment(identifier: "test\(i)", username: "Jacky Love", text: "Dịch văn bản: Dịch giữa 103 ngôn ngữ bằng cách nhập dữ liệu", createDate: Date(), likes: []))
-        }
-        renderModel.append(PostRenderViewModel(renderType: .comments(provider: comments)))
-        //case .actions(_):
-        renderModel.append(PostRenderViewModel(renderType: .actions(provider: "")))
-        // case .primaryContent(_):
-        renderModel.append(PostRenderViewModel(renderType: .primaryContent(provider: model)))
-        
+    @objc func didTapRightButton(){
+        print("didTapRightButton")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        view.backgroundColor = .red
-        view.addSubview(tableView)
-        configure()
-        tableView.delegate = self
         tableView.dataSource = self
-//        tableView.register(IGFeedPostTableViewCell.self, forCellReuseIdentifier: IGFeedPostTableViewCell.identifier)
-//        tableView.register(IGFeedPostActionTableViewCell.self, forCellReuseIdentifier: IGFeedPostActionTableViewCell.identifier)
-//        tableView.register(IGFeedPostHeaderTableViewCell.self, forCellReuseIdentifier: IGFeedPostHeaderTableViewCell.identifier)
-//        tableView.register(IGFeedPostGeneralTableViewCell.self, forCellReuseIdentifier: IGFeedPostGeneralTableViewCell.identifier)
+        tableView.delegate = self
+        configure()
+        setUpNavigationBarItem()
+    }
+    
+    func initConfigure(_ model : UserPostModel){
+        print("data was passed : \(model)")
+    }
+    
+    func setUpNavigationBarItem() {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "SplashIcon")
+        imageView.contentMode = .scaleAspectFill
+        self.navigationItem.titleView = imageView
+        let leftItem = UIBarButtonItem(image: UIImage(systemName: "camera"), style: .done, target: self, action: #selector(didTapLeftButton))
+        leftItem.tintColor = .black
+        navigationItem.leftBarButtonItem = leftItem
+        let rightItem = UIBarButtonItem(image: UIImage(systemName: "paperplane"), style: .done, target: self, action: #selector(didTapRightButton))
+        rightItem.tintColor = .black
+        navigationItem.rightBarButtonItem = rightItem
+    }
+    
+    private func configure(){
+        //        let x = 1
+        var comments = [PostComment]()
+        
+        let currentUser = User(username: "Tibb", bio: "@Tibb Love Swift Code", counts: UserCount(followers: 300, following: 399, posts: 100), name: (first: "Tibb", last: "K"), birthday: Date(), gender: .Male, joinDate:  Date(), thumbnailImage: URL(string: "https://i.pinimg.com/originals/0b/8f/b1/0b8fb17b3bb7caba4b30123a74bd21fb.jpg")!)
+        
+        
+        let user = User(username: "Đăng Tibbers", bio: "@ĐăngTibbers Love Swift Code", counts: UserCount(followers: 300, following: 399, posts: 100), name: (first: "Jacky", last: "Love"), birthday: Date(), gender: .Male, joinDate:  Date(), thumbnailImage: URL(string: "https://meohayaz.com/wp-content/uploads/2020/03/Tr%E1%BB%8Dn-b%E1%BB%99-nh%E1%BB%AFng-h%C3%ACnh-%E1%BA%A3nh-%C4%91%E1%BA%B9p-girl-xinh-cho-%C4%91i%E1%BB%87n-tho%E1%BA%A1i.jpg")!)
+        
+        let postLike = [PostLike(username: "thien dang", postIdentifier: "1233123"),PostLike(username: "thien dang", postIdentifier: "1233123"),
+                        PostLike(username: "thien dang", postIdentifier: "1233123"),
+                        PostLike(username: "thien dang", postIdentifier: "1233123"),
+                        PostLike(username: "thien dang", postIdentifier: "1233123"),
+                        PostLike(username: "thien dang", postIdentifier: "1233123"),
+                        PostLike(username: "thien dang", postIdentifier: "1233123")]
+        
+        let post = UserPostModel(postType: .photo, thumbnailImage: [
+            URL(string:"https://i.guim.co.uk/img/media/03caad21d019a429e66df852c31d57872b79ceb9/0_14_2603_1562/master/2603.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=1de70e809602b3bc061b0536caa8c517")!,
+            URL(string: "https://media-cdn.tripadvisor.com/media/photo-s/09/d6/c2/ca/blue-wahle-mirissa.jpg")!,
+            URL(string: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSfpLg2Rk6GE9xxK9VrExfap-dW5uy8EX-GSA&usqp=CAU")!
+        ],postURL: URL(string: "https://www.youtube.com/")!, caption: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.", likeCout: postLike , comments: [], createDate: Date(), targetUser: [], owner: user, bookmarked: false, liked: false)
+        
+        for i in 0..<1 {
+            comments.append(PostComment(identifier: "test\(i)", username: "Jacky Love", text: "Dịch văn bản: Dịch giữa 103 ngôn ngữ bằng cách nhập dữ liệu", createDate: Date(), likes: []))
+        }
+        for _ in 0...5{
+            feedRenderModels.append(Post(postDetails: post, comments: comments))
+        }
+        
+        storyRenderModels.append(currentUser)
+        
+        for _ in 0...10{
+            storyRenderModels.append(user)
+        }
     }
     
     override func viewDidLayoutSubviews() {
-        tableView.frame = view.bounds
+        tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        checkIsLoggined()
+    }
+    
+    func checkIsLoggined(){
+        if(Auth.auth().currentUser == nil){
+            //neu chua dang nhap thi chuyen sang man hinh dang nhap
+            print("Move to Login")
+            let loginVc = LoginViewController()
+            loginVc.modalPresentationStyle = .fullScreen
+            present(loginVc, animated: false, completion: nil)
+        }
     }
 }
 
-extension PostViewController : UITableViewDelegate , UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return renderModel.count
-    }
+extension PostViewController : UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch renderModel[section].renderType {
-        case .header(_):
-            return 1
-        case .comments(let comment):
-            return comment.count > 4 ? comment.count : comment.count
-        case .actions(_):
-            return 1
-        case .primaryContent(_):
-            return 1
-        }
+        return feedRenderModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let _ = renderModel[indexPath.section]
-//        switch model.renderType {
-//        case .header(let user):
-//            let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostHeaderTableViewCell.identifier, for: indexPath) as! IGFeedPostHeaderTableViewCell
-//
-//            return cell
-//        case .primaryContent(let content):
-//            let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostTableViewCell.identifier, for: indexPath) as! IGFeedPostTableViewCell
-//
-//            return cell
-//        case .actions(let comment):
-//            let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostActionTableViewCell.identifier, for: indexPath) as! IGFeedPostActionTableViewCell
-//
-//            return cell
-//        case .comments(let comment):
-//            let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostGeneralTableViewCell.identifier, for: indexPath) as! IGFeedPostGeneralTableViewCell
-//
-//            return cell
-//        }
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
+        let readMoreTextView = cell.contentView.viewWithTag(1) as! ReadMoreTextView
+        readMoreTextView.shouldTrim = !expandedCells.contains(indexPath.row)
+        readMoreTextView.setNeedsUpdateTrim()
+        readMoreTextView.layoutIfNeeded()
+        cell.configure(post: feedRenderModels[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let readMoreTextView = cell.contentView.viewWithTag(1) as! ReadMoreTextView
+        print(cell as Any)
+        readMoreTextView.onSizeChange = { [unowned tableView, unowned self] r in
+            print("r : \(r)")
+            let point = tableView.convert(r.bounds.origin, from: r)
+            print("point : \(point)")
+            guard let indexPath = tableView.indexPathForRow(at: point) else { return }
+            if r.shouldTrim {
+                self.expandedCells.remove(indexPath.row)
+            } else {
+                self.expandedCells.insert(indexPath.row)
+            }
+            tableView.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        let cell = tableView.cellForRow(at: indexPath)!
+        cell.selectionStyle = .none
+        //        let readMoreTextView = cell.contentView.viewWithTag(1) as! ReadMoreTextView
+        //        readMoreTextView.shouldTrim = !readMoreTextView.shouldTrim
+    }
+}
+
+extension PostViewController : FeedTableViewCellDelegate{
+    func didTapImageAndUserName() {
         
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch renderModel[indexPath.section].renderType {
-        case .header(_):
-            return 60
-        case .comments(_):
-            return 50
-        case .actions(_):
-            return 70
-        case .primaryContent(_):
-            return tableView.width
-        }
+    func didTapMoreButton() {
+        
+    }
+    
+    func didTapHeartButton() {
+        
+    }
+    
+    func didTapMessageButton() {
+        
+    }
+    
+    func didTapSendButton() {
+        
+    }
+    
+    func didTapTagButton() {
+        
+    }
+    
+    func didSeeMoreMessage() {
+        
+    }
+    
+    func didTapImageAndUserNameFooter() {
+        
+    }
+    
+    func didTapHeartFooterButton() {
+        
+    }
+    
+    func didTapHandFooterButton() {
+        
+    }
+    
+    func didTapAddFooterButton() {
+        
+    }
+    
+    func didTapSeeMoreMessage(){
+        
     }
 }
-    
+
+
+

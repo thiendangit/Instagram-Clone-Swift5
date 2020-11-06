@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,8 @@
 		0E0A356E252EC9BB0036871C /* EEZoomableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0A356D252EC9BB0036871C /* EEZoomableImageView.swift */; };
 		0E0A3571252F2E1E0036871C /* heart.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E0A3570252F2E1E0036871C /* heart.json */; };
 		0E133FB925370AF700B42D29 /* footerCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E133FB825370AF700B42D29 /* footerCollectionReusableView.swift */; };
+		0E139AC7255250970054082A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E139AC9255250970054082A /* Localizable.strings */; };
+		0E139ACC2554E5200054082A /* UserFollowingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E139ACB2554E5200054082A /* UserFollowingController.swift */; };
 		0E186CB2254678140080D946 /* imageSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E186CB0254678140080D946 /* imageSearchCollectionViewCell.swift */; };
 		0E186CB3254678140080D946 /* imageSearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E186CB1254678140080D946 /* imageSearchCollectionViewCell.xib */; };
 		0E186CB52547C11E0080D946 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E186CB42547C11E0080D946 /* PlayerView.swift */; };
@@ -52,7 +54,7 @@
 		0EAF0F2A2522F55D005DB0FF /* UserFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF0F292522F55D005DB0FF /* UserFollowTableViewCell.swift */; };
 		0EAF0F2D25232E03005DB0FF /* NoNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF0F2C25232E03005DB0FF /* NoNotificationView.swift */; };
 		0EAF0F3025233CBA005DB0FF /* NotificationFollowEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF0F2F25233CBA005DB0FF /* NotificationFollowEventTableViewCell.swift */; };
-		0EAF0F3225233CC7005DB0FF /* NotificationLikeEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF0F3125233CC7005DB0FF /* NotificationLikeEventTableViewCell.swift */; };
+		0EAF0F3225233CC7005DB0FF /* NotificationNewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF0F3125233CC7005DB0FF /* NotificationNewTableViewCell.swift */; };
 		0EAFCF12252D9BF3007A84CB /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFCF11252D9BF3007A84CB /* StoryCollectionViewCell.swift */; };
 		0ECBA27A253444BE004EFC38 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECBA279253444BE004EFC38 /* config.swift */; };
 		0ECBA27F25356396004EFC38 /* photoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECBA27E25356396004EFC38 /* photoCollectionViewController.swift */; };
@@ -66,6 +68,9 @@
 		0E0A356D252EC9BB0036871C /* EEZoomableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EEZoomableImageView.swift; sourceTree = "<group>"; };
 		0E0A3570252F2E1E0036871C /* heart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heart.json; sourceTree = "<group>"; };
 		0E133FB825370AF700B42D29 /* footerCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = footerCollectionReusableView.swift; sourceTree = "<group>"; };
+		0E139AC8255250970054082A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0E139ACA255250AA0054082A /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0E139ACB2554E5200054082A /* UserFollowingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowingController.swift; sourceTree = "<group>"; };
 		0E186CB0254678140080D946 /* imageSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E186CB1254678140080D946 /* imageSearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = imageSearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		0E186CB42547C11E0080D946 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
@@ -109,7 +114,7 @@
 		0EAF0F292522F55D005DB0FF /* UserFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowTableViewCell.swift; sourceTree = "<group>"; };
 		0EAF0F2C25232E03005DB0FF /* NoNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNotificationView.swift; sourceTree = "<group>"; };
 		0EAF0F2F25233CBA005DB0FF /* NotificationFollowEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFollowEventTableViewCell.swift; sourceTree = "<group>"; };
-		0EAF0F3125233CC7005DB0FF /* NotificationLikeEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationLikeEventTableViewCell.swift; sourceTree = "<group>"; };
+		0EAF0F3125233CC7005DB0FF /* NotificationNewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNewTableViewCell.swift; sourceTree = "<group>"; };
 		0EAFCF11252D9BF3007A84CB /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		0ECBA279253444BE004EFC38 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		0ECBA27E25356396004EFC38 /* photoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoCollectionViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +152,7 @@
 				0E35231A251C459D00C4FAD4 /* Utils.swift */,
 				0E0A356D252EC9BB0036871C /* EEZoomableImageView.swift */,
 				0ECBA279253444BE004EFC38 /* config.swift */,
+				0E139AC9255250970054082A /* Localizable.strings */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -282,6 +288,7 @@
 				0E352303251B09FB00C4FAD4 /* SearchResultViewController.swift */,
 				0E352305251B0A0C00C4FAD4 /* PostEditViewController.swift */,
 				0E352307251B0A2200C4FAD4 /* PublishPostViewController.swift */,
+				0E139ACB2554E5200054082A /* UserFollowingController.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -357,7 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				0EAF0F2F25233CBA005DB0FF /* NotificationFollowEventTableViewCell.swift */,
-				0EAF0F3125233CC7005DB0FF /* NotificationLikeEventTableViewCell.swift */,
+				0EAF0F3125233CC7005DB0FF /* NotificationNewTableViewCell.swift */,
 			);
 			path = NotificationsCell;
 			sourceTree = "<group>";
@@ -422,6 +429,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"en-GB",
 			);
 			mainGroup = 0E3522C7251AFE9500C4FAD4;
 			productRefGroup = 0E3522D1251AFE9500C4FAD4 /* Products */;
@@ -442,6 +450,7 @@
 				0E35230F251B2C7A00C4FAD4 /* GoogleService-Info.plist in Resources */,
 				0E3522DD251AFE9600C4FAD4 /* Assets.xcassets in Resources */,
 				0E2F2D4B25418463006D0E8E /* headerSearchView.xib in Resources */,
+				0E139AC7255250970054082A /* Localizable.strings in Resources */,
 				0E0A3571252F2E1E0036871C /* heart.json in Resources */,
 				0E3522DB251AFE9500C4FAD4 /* Main.storyboard in Resources */,
 				0E186CB3254678140080D946 /* imageSearchCollectionViewCell.xib in Resources */,
@@ -458,11 +467,9 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InstagramClone-Swift5/Pods-InstagramClone-Swift5-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InstagramClone-Swift5/Pods-InstagramClone-Swift5-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -512,8 +519,9 @@
 				0EE18909252D77E600B96B05 /* FeedTableViewCell.swift in Sources */,
 				0E35232C251DAFA100C4FAD4 /* FormTableViewCell.swift in Sources */,
 				0EAF0F2A2522F55D005DB0FF /* UserFollowTableViewCell.swift in Sources */,
-				0EAF0F3225233CC7005DB0FF /* NotificationLikeEventTableViewCell.swift in Sources */,
+				0EAF0F3225233CC7005DB0FF /* NotificationNewTableViewCell.swift in Sources */,
 				0EAFCF12252D9BF3007A84CB /* StoryCollectionViewCell.swift in Sources */,
+				0E139ACC2554E5200054082A /* UserFollowingController.swift in Sources */,
 				0EAF0F3025233CBA005DB0FF /* NotificationFollowEventTableViewCell.swift in Sources */,
 				0ECBA28225359C43004EFC38 /* profileImageCollectionViewCell.swift in Sources */,
 				0E352317251B3C6400C4FAD4 /* StorageManager.swift in Sources */,
@@ -547,6 +555,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		0E139AC9255250970054082A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E139AC8255250970054082A /* en */,
+				0E139ACA255250AA0054082A /* en-GB */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		0E3522D9251AFE9500C4FAD4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -570,6 +587,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -630,6 +648,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

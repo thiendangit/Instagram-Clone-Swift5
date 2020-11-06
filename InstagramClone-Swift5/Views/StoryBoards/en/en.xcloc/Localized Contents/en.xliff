@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="InstagramClone-Swift5/en.lproj/InfoPlist.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.6" build-num="11E708"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>Tibb Instagram</source>
+        <target>Tibb Instagram</target>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="InstagramClone-Swift5/Views/StoryBoards/Base.lproj/Main.storyboard" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="11.6" build-num="11E708"/>
+    </header>
+    <body>
+      <trans-unit id="1Tt-rK-sdv.text" xml:space="preserve">
+        <source>20 giờ trước</source>
+        <target>20 giờ trước</target>
+        <note>Class = "UILabel"; text = "20 giờ trước"; ObjectID = "1Tt-rK-sdv";</note>
+      </trans-unit>
+      <trans-unit id="7Kd-Wz-kxU.text" xml:space="preserve">
+        <source>Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</source>
+        <target>Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</target>
+        <note>Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "7Kd-Wz-kxU";</note>
+      </trans-unit>
+      <trans-unit id="9qy-z5-gAC.text" xml:space="preserve">
+        <source>xem tất cả 67 tin nhắn</source>
+        <target>xem tất cả 67 tin nhắn</target>
+        <note>Class = "UILabel"; text = "xem tất cả 67 tin nhắn"; ObjectID = "9qy-z5-gAC";</note>
+      </trans-unit>
+      <trans-unit id="E3p-M4-GT8.text" xml:space="preserve">
+        <source>Đăng Tibbers</source>
+        <target>Đăng Tibbers</target>
+        <note>Class = "UILabel"; text = "Đăng Tibbers"; ObjectID = "E3p-M4-GT8";</note>
+      </trans-unit>
+      <trans-unit id="IY6-Gl-1z7.text" xml:space="preserve">
+        <source>Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</source>
+        <target>Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</target>
+        <note>Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "IY6-Gl-1z7";</note>
+      </trans-unit>
+      <trans-unit id="Lf4-L3-pWY.text" xml:space="preserve">
+        <source>Đăng Tibbers</source>
+        <target>Đăng Tibbers</target>
+        <note>Class = "UILabel"; text = "Đăng Tibbers"; ObjectID = "Lf4-L3-pWY";</note>
+      </trans-unit>
+      <trans-unit id="Nm0-O6-6DQ.text" xml:space="preserve">
+        <source>20 giờ trước</source>
+        <target>20 giờ trước</target>
+        <note>Class = "UILabel"; text = "20 giờ trước"; ObjectID = "Nm0-O6-6DQ";</note>
+      </trans-unit>
+      <trans-unit id="QF4-Gm-99a.text" xml:space="preserve">
+        <source>xem tất cả 67 tin nhắn</source>
+        <target>xem tất cả 67 tin nhắn</target>
+        <note>Class = "UILabel"; text = "xem tất cả 67 tin nhắn"; ObjectID = "QF4-Gm-99a";</note>
+      </trans-unit>
+      <trans-unit id="S5k-Fn-l47.normalTitle" xml:space="preserve">
+        <source>Thêm bình luận...</source>
+        <target>Thêm bình luận...</target>
+        <note>Class = "UIButton"; normalTitle = "Thêm bình luận..."; ObjectID = "S5k-Fn-l47";</note>
+      </trans-unit>
+      <trans-unit id="V9s-vE-ARP.text" xml:space="preserve">
+        <source>171 lượt thích</source>
+        <target>171 lượt thích</target>
+        <note>Class = "UILabel"; text = "171 lượt thích"; ObjectID = "V9s-vE-ARP";</note>
+      </trans-unit>
+      <trans-unit id="Wi4-ij-Aeb.normalTitle" xml:space="preserve">
+        <source>Thêm bình luận...</source>
+        <target>Thêm bình luận...</target>
+        <note>Class = "UIButton"; normalTitle = "Thêm bình luận..."; ObjectID = "Wi4-ij-Aeb";</note>
+      </trans-unit>
+      <trans-unit id="x6D-ii-tkF.text" xml:space="preserve">
+        <source>171 lượt thích</source>
+        <target>171 lượt thích</target>
+        <note>Class = "UILabel"; text = "171 lượt thích"; ObjectID = "x6D-ii-tkF";</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,3 +1,26 @@
 ${PODS_ROOT}/Target Support Files/Pods-InstagramClone-Swift5/Pods-InstagramClone-Swift5-resources.sh
 ${PODS_CONFIGURATION_BUILD_DIR}/Appirater/Appirater.bundle
 ${PODS_CONFIGURATION_BUILD_DIR}/XLPagerTabStrip/XLPagerTabStrip.bundle
+${PODS_ROOT}/YPImagePicker/Resources/ar.lproj
+${PODS_ROOT}/YPImagePicker/Resources/Assets.xcassets
+${PODS_ROOT}/YPImagePicker/Resources/bg.lproj
+${PODS_ROOT}/YPImagePicker/Resources/de.lproj
+${PODS_ROOT}/YPImagePicker/Resources/en.lproj
+${PODS_ROOT}/YPImagePicker/Resources/es.lproj
+${PODS_ROOT}/YPImagePicker/Resources/fr.lproj
+${PODS_ROOT}/YPImagePicker/Resources/id.lproj
+${PODS_ROOT}/YPImagePicker/Resources/it.lproj
+${PODS_ROOT}/YPImagePicker/Resources/ja.lproj
+${PODS_ROOT}/YPImagePicker/Resources/ko.lproj
+${PODS_ROOT}/YPImagePicker/Resources/nl.lproj
+${PODS_ROOT}/YPImagePicker/Resources/pl.lproj
+${PODS_ROOT}/YPImagePicker/Resources/pt-BR.lproj
+${PODS_ROOT}/YPImagePicker/Resources/pt-PT.lproj
+${PODS_ROOT}/YPImagePicker/Resources/ru.lproj
+${PODS_ROOT}/YPImagePicker/Resources/th.lproj
+${PODS_ROOT}/YPImagePicker/Resources/tr.lproj
+${PODS_ROOT}/YPImagePicker/Resources/vi.lproj
+${PODS_ROOT}/YPImagePicker/Resources/zh-Hans.lproj
+${PODS_ROOT}/YPImagePicker/Resources/zh-Hant.lproj
+${PODS_ROOT}/YPImagePicker/Source/Filters/Video/YPVideoFiltersVC.xib
+${PODS_ROOT}/YPImagePicker/Source/Pages/Gallery/YPLibraryView.xib
