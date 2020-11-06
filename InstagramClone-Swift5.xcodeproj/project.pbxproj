@@ -13,6 +13,7 @@
 		0E133FB925370AF700B42D29 /* footerCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E133FB825370AF700B42D29 /* footerCollectionReusableView.swift */; };
 		0E139AC7255250970054082A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E139AC9255250970054082A /* Localizable.strings */; };
 		0E139ACC2554E5200054082A /* UserFollowingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E139ACB2554E5200054082A /* UserFollowingController.swift */; };
+		0E139ACF255538860054082A /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E139ACE255538850054082A /* CustomTabBarViewController.swift */; };
 		0E186CB2254678140080D946 /* imageSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E186CB0254678140080D946 /* imageSearchCollectionViewCell.swift */; };
 		0E186CB3254678140080D946 /* imageSearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E186CB1254678140080D946 /* imageSearchCollectionViewCell.xib */; };
 		0E186CB52547C11E0080D946 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E186CB42547C11E0080D946 /* PlayerView.swift */; };
@@ -71,6 +72,7 @@
 		0E139AC8255250970054082A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0E139ACA255250AA0054082A /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		0E139ACB2554E5200054082A /* UserFollowingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowingController.swift; sourceTree = "<group>"; };
+		0E139ACE255538850054082A /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		0E186CB0254678140080D946 /* imageSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E186CB1254678140080D946 /* imageSearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = imageSearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		0E186CB42547C11E0080D946 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
@@ -267,10 +269,11 @@
 		0E3522F4251B081500C4FAD4 /* MainTabNavigator */ = {
 			isa = PBXGroup;
 			children = (
+				0E139ACE255538850054082A /* CustomTabBarViewController.swift */,
 				0E3522D7251AFE9500C4FAD4 /* HomeViewController.swift */,
 				0E3522EC251B06A100C4FAD4 /* ExploreViewController..swift */,
-				0E3522F2251B071600C4FAD4 /* CameraViewController..swift */,
 				0E3522EE251B06AF00C4FAD4 /* NotificationViewController.swift */,
+				0E3522F2251B071600C4FAD4 /* CameraViewController..swift */,
 				0E3522F0251B070400C4FAD4 /* ProfileViewController..swift */,
 			);
 			path = MainTabNavigator;
@@ -546,6 +549,7 @@
 				0E35232E251DF04B00C4FAD4 /* PhotoCollectionViewCell.swift in Sources */,
 				0ECBA27A253444BE004EFC38 /* config.swift in Sources */,
 				0E3522FC251B097500C4FAD4 /* EditProfileViewController.swift in Sources */,
+				0E139ACF255538860054082A /* CustomTabBarViewController.swift in Sources */,
 				0E3522ED251B06A100C4FAD4 /* ExploreViewController..swift in Sources */,
 				0E186CB52547C11E0080D946 /* PlayerView.swift in Sources */,
 				0ECBA27F25356396004EFC38 /* photoCollectionViewController.swift in Sources */,

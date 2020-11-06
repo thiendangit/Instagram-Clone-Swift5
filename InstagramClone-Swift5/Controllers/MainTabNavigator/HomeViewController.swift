@@ -51,8 +51,10 @@ class HomeViewController: UIViewController {
     
     func setUpNavigationBarItem() {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "SplashIcon")
+        let image = UIImage(named: "SplashIcon")?.resize((self.navigationController?.navigationBar.frame.height)! + 60, view.width/3)
+        imageView.image = image
         imageView.contentMode = .scaleAspectFill
+        
         self.navigationItem.titleView = imageView
         let leftItem = UIBarButtonItem(image: UIImage(systemName: "camera"), style: .done, target: self, action: #selector(didTapLeftButton))
         leftItem.tintColor = .black

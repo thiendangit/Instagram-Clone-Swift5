@@ -498,7 +498,7 @@
         <!--Explore View Controller-->
         <scene sceneID="mOs-Ft-sy7">
             <objects>
-                <viewController id="i7o-gB-gJT" customClass="ExploreViewController" customModule="Tibb_Instagram" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExploreViewController" id="i7o-gB-gJT" customClass="ExploreViewController" customModule="Tibb_Instagram" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d8u-tl-ZgL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -571,7 +571,7 @@
         <!--Camera View Controller-->
         <scene sceneID="AZ1-Bn-jSb">
             <objects>
-                <viewController id="6GG-lR-kW1" customClass="CameraViewController" customModule="Tibb_Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CameraViewController" id="6GG-lR-kW1" customClass="CameraViewController" customModule="Tibb_Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OvK-AM-Zc5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -587,7 +587,7 @@
         <!--Notification View Controller-->
         <scene sceneID="3bi-tV-BQa">
             <objects>
-                <viewController id="gk5-DC-Loq" customClass="NotificationViewController" customModule="Tibb_Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotificationViewController" id="gk5-DC-Loq" customClass="NotificationViewController" customModule="Tibb_Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X5P-8A-fUp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -603,7 +603,7 @@
         <!--Profile View Controller-->
         <scene sceneID="PA6-wv-Uvd">
             <objects>
-                <viewController id="2TZ-Y4-4YV" customClass="ProfileViewController" customModule="Tibb_Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="2TZ-Y4-4YV" customClass="ProfileViewController" customModule="Tibb_Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rJz-Fm-JqN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -621,7 +621,7 @@
             <objects>
                 <viewController storyboardIdentifier="PostViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DgY-XY-Aac" customClass="PostViewController" customModule="Tibb_Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rvH-xh-djm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="500" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VZT-15-mA4">

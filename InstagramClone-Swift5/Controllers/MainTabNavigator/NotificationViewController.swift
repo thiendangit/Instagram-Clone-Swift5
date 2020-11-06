@@ -41,7 +41,6 @@ class NotificationViewController: UIViewController {
         //        tableView.isHidden = true
         spinner.startAnimating()
         // Do any additional setup after loading the view.
-        title = "Notification"
         view.addSubview(tableView)
         //        view.addSubview(noNotificationView)
         //        view.addSubview(spinner)
