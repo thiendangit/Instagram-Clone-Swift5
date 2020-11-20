@@ -33,17 +33,17 @@ This repository is still under development and I will continue to add more featu
 
 
 <p>
-<img src="https://i.imgur.com/Y1Zl2uq.png" alt="feed example" width = "400" >
-<img src="https://i.imgur.com/yu0ifGP.png" alt="upload photo example"width = "400" >
-<img src="https://i.imgur.com/d2vc8H2.png" alt="go to a profile from feed" width = "400">
-<img src="https://i.imgur.com/O8teGFY.png" alt="edit profile example" width = "400" >
-<img src="https://i.imgur.com/K8FaEZI.png" alt="comment and activity feed example" width = "400">
+<img src="https://i.imgur.com/Y1Zl2uq.png" alt="feed example" width = "300" >
+<img src="https://i.imgur.com/yu0ifGP.png" alt="upload photo example"width = "300" >
+<img src="https://i.imgur.com/d2vc8H2.png" alt="go to a profile from feed" width = "300">
+<img src="https://i.imgur.com/O8teGFY.png" alt="edit profile example" width = "300" >
+<img src="https://i.imgur.com/K8FaEZI.png" alt="comment and activity feed example" width = "300">
   
-<img src="https://i.imgur.com/F2E2fK6.png" alt="comment and activity feed example" width = "400">
-<img src="https://i.imgur.com/C7VJm4v.png" alt="comment and activity feed example" width = "400">
-<img src="https://i.imgur.com/ZOGnuZ9.png" alt="comment and activity feed example" width = "400">
-<img src="https://i.imgur.com/bTYYG8l.png" alt="comment and activity feed example" width = "400">
-<img src="https://i.imgur.com/22geR7i.png" alt="comment and activity feed example" width = "400">
+<img src="https://i.imgur.com/F2E2fK6.png" alt="comment and activity feed example" width = "300">
+<img src="https://i.imgur.com/C7VJm4v.png" alt="comment and activity feed example" width = "300">
+<img src="https://i.imgur.com/ZOGnuZ9.png" alt="comment and activity feed example" width = "300">
+<img src="https://i.imgur.com/bTYYG8l.png" alt="comment and activity feed example" width = "300">
+<img src="https://i.imgur.com/22geR7i.png" alt="comment and activity feed example" width = "300">
 
 </p>
 
