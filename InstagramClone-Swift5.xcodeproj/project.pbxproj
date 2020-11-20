@@ -41,7 +41,6 @@
 		0E352306251B0A0C00C4FAD4 /* PostEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E352305251B0A0C00C4FAD4 /* PostEditViewController.swift */; };
 		0E352308251B0A2300C4FAD4 /* PublishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E352307251B0A2200C4FAD4 /* PublishPostViewController.swift */; };
 		0E35230C251B2BA000C4FAD4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E35230B251B2BA000C4FAD4 /* RegisterViewController.swift */; };
-		0E35230F251B2C7A00C4FAD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E35230E251B2C7A00C4FAD4 /* GoogleService-Info.plist */; };
 		0E352311251B30AE00C4FAD4 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E352310251B30AE00C4FAD4 /* DatabaseManager.swift */; };
 		0E352313251B37B900C4FAD4 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E352312251B37B900C4FAD4 /* AuthManager.swift */; };
 		0E352317251B3C6400C4FAD4 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E352316251B3C6400C4FAD4 /* StorageManager.swift */; };
@@ -51,6 +50,8 @@
 		0E35232E251DF04B00C4FAD4 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E35232D251DF04B00C4FAD4 /* PhotoCollectionViewCell.swift */; };
 		0E352331251DF33F00C4FAD4 /* ProfileInfoHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E352330251DF33F00C4FAD4 /* ProfileInfoHeaderViewController.swift */; };
 		0E352333251DF35000C4FAD4 /* ProfileTabsHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E352332251DF35000C4FAD4 /* ProfileTabsHeaderCollectionReusableView.swift */; };
+		0E71E50E2567C1290094299F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E71E50D2567C1280094299F /* GoogleService-Info.plist */; };
+		0E71E5122567C39B0094299F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0E71E5112567C39B0094299F /* README.md */; };
 		0EAF0F272521D45F005DB0FF /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF0F262521D45F005DB0FF /* Models.swift */; };
 		0EAF0F2A2522F55D005DB0FF /* UserFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF0F292522F55D005DB0FF /* UserFollowTableViewCell.swift */; };
 		0EAF0F2D25232E03005DB0FF /* NoNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF0F2C25232E03005DB0FF /* NoNotificationView.swift */; };
@@ -102,7 +103,6 @@
 		0E352305251B0A0C00C4FAD4 /* PostEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditViewController.swift; sourceTree = "<group>"; };
 		0E352307251B0A2200C4FAD4 /* PublishPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPostViewController.swift; sourceTree = "<group>"; };
 		0E35230B251B2BA000C4FAD4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		0E35230E251B2C7A00C4FAD4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0E352310251B30AE00C4FAD4 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		0E352312251B37B900C4FAD4 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		0E352316251B3C6400C4FAD4 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -112,6 +112,8 @@
 		0E35232D251DF04B00C4FAD4 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E352330251DF33F00C4FAD4 /* ProfileInfoHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoHeaderViewController.swift; sourceTree = "<group>"; };
 		0E352332251DF35000C4FAD4 /* ProfileTabsHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabsHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		0E71E50D2567C1280094299F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/OfMe/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E71E5112567C39B0094299F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0EAF0F262521D45F005DB0FF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		0EAF0F292522F55D005DB0FF /* UserFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowTableViewCell.swift; sourceTree = "<group>"; };
 		0EAF0F2C25232E03005DB0FF /* NoNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNotificationView.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		0E3522C7251AFE9500C4FAD4 = {
 			isa = PBXGroup;
 			children = (
+				0E71E5112567C39B0094299F /* README.md */,
 				0E3522D2251AFE9500C4FAD4 /* InstagramClone-Swift5 */,
 				0E3522D1251AFE9500C4FAD4 /* Products */,
 				069D04BD0AA48767ABF8BDD0 /* Pods */,
@@ -202,8 +205,8 @@
 		0E3522D2251AFE9500C4FAD4 /* InstagramClone-Swift5 */ = {
 			isa = PBXGroup;
 			children = (
+				0E71E50D2567C1280094299F /* GoogleService-Info.plist */,
 				0E0A356A252EC9330036871C /* Utils */,
-				0E35230E251B2C7A00C4FAD4 /* GoogleService-Info.plist */,
 				0E3522EA251B021B00C4FAD4 /* Resources */,
 				0E3522E9251B021200C4FAD4 /* Models */,
 				0E3522E7251B01F500C4FAD4 /* Views */,
@@ -450,12 +453,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E3522E0251AFE9600C4FAD4 /* LaunchScreen.storyboard in Resources */,
-				0E35230F251B2C7A00C4FAD4 /* GoogleService-Info.plist in Resources */,
 				0E3522DD251AFE9600C4FAD4 /* Assets.xcassets in Resources */,
+				0E71E5122567C39B0094299F /* README.md in Resources */,
 				0E2F2D4B25418463006D0E8E /* headerSearchView.xib in Resources */,
 				0E139AC7255250970054082A /* Localizable.strings in Resources */,
 				0E0A3571252F2E1E0036871C /* heart.json in Resources */,
 				0E3522DB251AFE9500C4FAD4 /* Main.storyboard in Resources */,
+				0E71E50E2567C1290094299F /* GoogleService-Info.plist in Resources */,
 				0E186CB3254678140080D946 /* imageSearchCollectionViewCell.xib in Resources */,
 				0E2F2D512542890C006D0E8E /* headerSearchCollectionViewCell.xib in Resources */,
 			);

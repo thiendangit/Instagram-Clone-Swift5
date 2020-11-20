@@ -203,21 +203,21 @@ extension ExploreViewController : UICollectionViewDelegate,UICollectionViewDataS
                 for cell in cells {
                     // play video for first load
                     if(collectionView.contentOffset.y < headerSearchHeight){
-//                        previousCells?.playerView.player?.pause()
-//                        let cell = collectionView.cellForItem(at: IndexPath(row: 2, section: 0)) as! imageSearchCollectionViewCell
-//                        cell.playerView.player?.play()
-//                        previousCells = cell
+                        previousCells?.playerView.player?.pause()
+                        let cell = collectionView.cellForItem(at: IndexPath(row: 2, section: 0)) as! imageSearchCollectionViewCell
+                        cell.playerView.player?.play()
+                        previousCells = cell
                     }else{
                         //play video for end load
                         if(cell.frame.minY + cell.frame.height*2 + 20 >= collectionView.contentSize.height && cells.count >= 2){
-//                            previousCells?.playerView.player?.pause()
-//                            cells[1].playerView.player?.play()
-//                            previousCells = cells[1]
+                            previousCells?.playerView.player?.pause()
+                            cells[1].playerView.player?.play()
+                            previousCells = cells[1]
                         }else{
                             //next video
-//                            previousCells?.playerView.player?.pause()
-//                            cells[0].playerView.player?.play()
-//                            previousCells = cells[0]
+                            previousCells?.playerView.player?.pause()
+                            cells[0].playerView.player?.play()
+                            previousCells = cells[0]
                         }
                     }
                 }
