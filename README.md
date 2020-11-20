@@ -1,4 +1,4 @@
-# Instagram_clone_Swift5
+# Instagram clone Swift5
 
 Instagram Clone (Both frontend and backend) created with Swift5 and Firebase.
 
